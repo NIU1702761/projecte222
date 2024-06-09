@@ -39,7 +39,6 @@ class Recomender(metaclass=ABCMeta):
                 id_usuari = input("Identificador d'usuari: ")
                 puntuacions, ids_items_recomanats = self._recomanacio.recomana_per(id_usuari)
                 
-                
                 for id_item in ids_items_recomanats:
                     I = self.crea_item(id_item, self._fitxer_valoracions,self._fitxer_items)
                     if I:
@@ -48,24 +47,22 @@ class Recomender(metaclass=ABCMeta):
                         print('Item no carregat')
             elif accio == '2':
                 id_usuari = input("Identificador d'usuari: ")
-                valoracions_usuari = self._recomanacio.valoracions_usuari(id_usuari)
+                
                 prediccions, ids_items_recomanats = self._recomanacio.recomana_per(id_usuari)
-                #MAE
-                #for index, n in enumerate(valoracions_usuari):
-                 #   if n != 0:
-                        
-                numerador_mae = abs(prediccions - valoracions_usuari)
-                mae = np.sum(numerador_mae)/len(numerador_mae)
-                #RMSE
-                numerador_rmse = (valoracions_usuari - self._puntuacions)**2
-                rmse = math.sqrt(np.sum(numerador_rmse) /len(numerador_rmse))
+                valoracions_usuari = self._recomanacio.valoracions_usuari(id_usuari)
+                c = valoracions_usuari != 0.0
+                
+                mae = (np.sum(abs(prediccions[c] - valoracions_usuari[c]))) / np.count_nonzero(valoracions_usuari)
+                rmse = math.sqrt((np.sum((valoracions_usuari[c] - prediccions[c])**2))/np.count_nonzero(valoracions_usuari))
+                
+                print('MAE:',mae)
+                print('RMSE:',rmse)
             else:
                 print('Sortint...')
                 break 
     
     def crea_item(self, id_item, fitxer_valoracions, fitxer_items):
         raise NotImplementedError()
-
 
 
 

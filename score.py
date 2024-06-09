@@ -5,14 +5,12 @@ Created on Wed Jun  5 21:20:57 2024
 
 @author: aliciamartilopez
 """
-
-#from items import Item, Movie, Book
-#from user import User
 import numpy as np
 from typing import List
 from abc import ABCMeta, abstractmethod
 import math
-
+#from scipy.sparse import lil_matrix
+import csv
 
 class Score(metaclass=ABCMeta):
     
@@ -26,7 +24,12 @@ class Score(metaclass=ABCMeta):
         self._ll_usuaris = set()
         self._ll_items = set()
         self._mat = None
-        #raise NotImplementedError()
+    
+    def ll_items(self):
+        return self._ll_items
+    
+    def ll_usuaris(self):
+        return self._ll_usuaris
 
     def min_vots(self,min_vots):
         ll = []
@@ -75,7 +78,7 @@ class Score(metaclass=ABCMeta):
         numerador=0
         denominador1=0
         denominador2=0
-        index_usu_client=self._ll_usuaris.index(usuari_client) #Trobar índex d'usuari a la matriu
+        index_usu_client=self._ll_usuaris.index(usuari_client)
         index_usu_sec=self._ll_usuaris.index(usuari_secundari)
         num_rows, _ = self._mat.shape
         for j in range(num_rows):
@@ -98,6 +101,17 @@ class Score(metaclass=ABCMeta):
     def max(self):
         return self._mat.max()
     
+    def item_features(self, fitxer_items):
+        item_features = []
+        with open(fitxer_items, 'r') as f:
+            next(f)
+            reader = csv.reader(f)
+            for line in reader:
+                generes = line[-1]
+                id_item = line[0]
+                if id_item in self._ll_items:
+                    item_features.append(generes)
+        return item_features
 
 class ScoreMovies(Score):
     
@@ -147,7 +161,7 @@ class ScoreBooks(Score):
         with open(fitxer_items, 'r') as f:
            next(f)
            for line in f:
-               if len(self._ll_items) < 50000:
+               if len(self._ll_items) < 10000:
                    line=line.strip().split(',')
                    id_item = line[0]
                    self._ll_items.add(id_item)
@@ -173,7 +187,7 @@ class ScoreBooks(Score):
             next(f) 
             i = 0
             for line in f:
-               if i < 50000:
+               if i < 10000:
                    line = line.strip().split(',')
                    
                    id_usuari = line[0]
@@ -191,5 +205,3 @@ class ScoreBooks(Score):
                    i += 1
                else:
                    break
-               
-     

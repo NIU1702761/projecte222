@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Thu Jun  6 11:20:52 2024
-
-@author: aliciamartilopez
-"""
 
 import numpy as np
 import csv
@@ -14,7 +9,7 @@ class Item(metaclass=ABCMeta):
 
     _titol: str
     _ID: str
-    _extra: str #Tercera columna, generes per un i autor per altre
+    _extra: str
 
 
     def __init__(self, ID=0, nomFitxerValoracions="", nomFitxerTitols=""):
@@ -25,7 +20,6 @@ class Item(metaclass=ABCMeta):
             next(f)
             reader = csv.reader(f)
             for line in reader:
-                #elements = line.strip().split(',')
                 if line[0] == self._ID:
                     self._titol=line[1]
                     self._extra=line[2]
@@ -50,7 +44,6 @@ class Book(Item):
         with open(nomFitxerTitols, 'r') as f:
             reader = csv.reader(f)
             for line in reader:
-                #line = line.split(',')
                 if line[0] == self._ID:
                     self._autor = line[2]
     
