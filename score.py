@@ -1,16 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Wed Jun  5 21:20:57 2024
-
-@author: aliciamartilopez
-"""
 import numpy as np
 from typing import List
 from abc import ABCMeta, abstractmethod
 import math
-#from scipy.sparse import lil_matrix
+from scipy.sparse import lil_matrix
 import csv
+import logging
 
 class Score(metaclass=ABCMeta):
     
@@ -122,7 +118,8 @@ class ScoreMovies(Score):
     
     def __init__(self, fitxer_items,fitxer_valoracions):
         super().__init__(fitxer_items, fitxer_valoracions) 
-
+        
+        logging.info("Inicialitzant ScoreMovies")
         with open(fitxer_valoracions, 'r') as f:
             next(f) 
             for line in f:
@@ -137,8 +134,8 @@ class ScoreMovies(Score):
         self._ll_items = list(sorted(self._ll_items))
         self._n_usuaris, self._n_items = len(self._ll_usuaris), len(self._ll_items)
         self._mat = np.zeros((self._n_usuaris, self._n_items), dtype='float16')
-
-
+        
+        logging.info("Carregant dades de valoracions")
         with open(fitxer_valoracions, 'r') as f:
             next(f) 
             for line in f:
@@ -158,6 +155,7 @@ class ScoreBooks(Score):
     def __init__(self, fitxer_items,fitxer_valoracions):
         super().__init__(fitxer_items, fitxer_valoracions) 
         
+        logging.info("Inicialitzant ScoreBooks")
         with open(fitxer_items, 'r') as f:
            next(f)
            for line in f:
@@ -182,7 +180,7 @@ class ScoreBooks(Score):
         
         #print('Shape mat:')
         #print(self._mat.shape)
-
+        logging.info("Carregant dades de valoracions")
         with open(fitxer_valoracions, 'r') as f:
             next(f) 
             i = 0
@@ -205,3 +203,5 @@ class ScoreBooks(Score):
                    i += 1
                else:
                    break
+               
+     

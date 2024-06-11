@@ -4,6 +4,7 @@
 import numpy as np
 import csv
 from abc import ABCMeta, abstractmethod
+import logging
 
 class Item(metaclass=ABCMeta):
 
@@ -16,6 +17,7 @@ class Item(metaclass=ABCMeta):
         self._titol = ""
         self._ID = ID
         self._extra = ''
+        logging.debug(f"Inicialitzant Item amb ID: {ID}")
         with open(nomFitxerTitols, 'r', encoding='utf-8') as f:
             next(f)
             reader = csv.reader(f)
@@ -65,7 +67,8 @@ class Movie(Item):
     def __str__(self):
         if self._titol:
             resposta = super().__str__()
-            resposta += 'GENERES: '+str(self._generes)
+            generes = ''
+            resposta += 'GENERES: '+' | '.join(self._generes)
             return resposta
         else:
             return None
