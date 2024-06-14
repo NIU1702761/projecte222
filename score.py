@@ -1,14 +1,57 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-import numpy as np
-from typing import List
 from abc import ABCMeta, abstractmethod
-import math
-from scipy.sparse import lil_matrix
-import csv
+from typing import List
+import numpy as np
 import logging
+import math
+import csv
+
 
 class Score(metaclass=ABCMeta):
+    """
+    Classe base per calcular puntuacions.
+
+    Attributes
+    ----------
+    _ll_usuaris : set
+        Conjunt d'usuaris.
+    _ll_items : set
+        Conjunt d'ítems.
+    _n_usuaris : int
+        Nombre d'usuaris.
+    _n_items : int
+        Nombre d'ítems.
+    _mat : np.array
+        Matriu de puntuacions.
+
+    Methods
+    -------
+    ll_items()
+        Retorna el conjunt d'ítems.
+    ll_usuaris()
+        Retorna el conjunt d'usuaris.
+    min_vots(min_vots)
+        Retorna una llista d'ítems amb un mínim de vots.
+    avg_usu(id_usuari)
+        Retorna la puntuació mitjana d'un usuari.
+    avg_item(id_item)
+        Retorna la puntuació mitjana d'un ítem.
+    num_vots(id_item)
+        Retorna el nombre de vots d'un ítem.
+    avg_global(ll_id_items)
+        Retorna la puntuació mitjana global dels ítems considerats.
+    no_vista(id_usuari, id_item)
+        Comprova si un ítem no ha estat vist per un usuari.
+    similitud(usuari_client, usuari_secundari)
+        Calcula la similitud entre dos usuaris.
+    vector_puntuacions(id_user)
+        Retorna el vector de puntuacions d'un usuari.
+    max()
+        Retorna la puntuació màxima en la matriu.
+    item_features(fitxer_items)
+        Retorna les característiques dels ítems.
+    """
     
     _ll_usuaris = set 
     _ll_items = set
@@ -17,17 +60,56 @@ class Score(metaclass=ABCMeta):
     _mat = np.array
     
     def __init__(self, fitxer_items,fitxer_valoracions):
+        """
+        Inicialitza un nou objecte Score.
+
+        Parameters
+        ----------
+        fitxer_items : str
+            Nom del fitxer d'ítems.
+        fitxer_valoracions : str
+            Nom del fitxer de valoracions.
+        """
         self._ll_usuaris = set()
         self._ll_items = set()
         self._mat = None
     
     def ll_items(self):
+        """
+        Retorna el conjunt d'ítems.
+
+        Returns
+        -------
+        set
+            Conjunt d'ítems.
+        """
         return self._ll_items
     
     def ll_usuaris(self):
+        """
+        Retorna el conjunt d'usuaris.
+
+        Returns
+        -------
+        set
+            Conjunt d'usuaris.
+        """
         return self._ll_usuaris
 
     def min_vots(self,min_vots):
+        """
+        Retorna una llista d'ítems amb un mínim de vots.
+
+        Parameters
+        ----------
+        min_vots : int
+            Nombre mínim de vots.
+
+        Returns
+        -------
+        list
+            Llista d'ítems amb un mínim de vots.
+        """
         ll = []
         for index, id_item in enumerate(self._ll_items):
             if np.count_nonzero(self._mat[:,index]) >= min_vots:
@@ -35,14 +117,36 @@ class Score(metaclass=ABCMeta):
         return ll
     
     def avg_usu(self, id_usuari) -> float:
+        """
+        Retorna la puntuació mitjana d'un usuari.
+
+        Parameters
+        ----------
+        id_usuari : str
+            Identificador de l'usuari.
+
+        Returns
+        -------
+        float
+            Puntuació mitjana de l'usuari.
+        """
         fila=self._mat[self._ll_usuaris.index(id_usuari),:]
         sense_zeros = fila[fila > 0]
         return np.mean(sense_zeros)
     
     def avg_item(self, id_item) -> float:
         """
-        avg_item: valoració mitja que li han donat els usuaris a l’ítem (considerant
-        només els vots rebuts, descartem valoracions amb un 0).
+        Retorna la puntuació mitjana d'un ítem.
+
+        Parameters
+        ----------
+        id_item : str
+            Identificador de l'ítem.
+
+        Returns
+        -------
+        float
+            Puntuació mitjana de l'ítem.
         """
         columna = self._mat[:,self._ll_items.index(id_item)]
         sense_zeros = columna[columna > 0]
@@ -50,14 +154,34 @@ class Score(metaclass=ABCMeta):
     
     def num_vots(self, id_item):
         """
-        num_vots: nº d’usuaris que han puntuat aquest ítem
+        Retorna el nombre de vots d'un ítem.
+
+        Parameters
+        ----------
+        id_item : str
+            Identificador de l'ítem.
+
+        Returns
+        -------
+        int
+            Nombre de vots de l'ítem.
         """
         columna = self._mat[:, self._ll_items.index(id_item)]
         return np.count_nonzero(columna)
     
     def avg_global(self, ll_id_items):
         """
-        avg_global: valoració mitja de tots els ítems considerats
+        Retorna la puntuació mitjana global dels ítems considerats.
+
+        Parameters
+        ----------
+        ll_id_items : list
+            Llista d'identificadors d'ítems.
+
+        Returns
+        -------
+        float
+            Puntuació mitjana global dels ítems considerats.
         """
         suma = 0
         for id_item in ll_id_items:
@@ -65,12 +189,42 @@ class Score(metaclass=ABCMeta):
         return suma/len(ll_id_items)
 
     def no_vista(self, id_usuari, id_item):
+        """
+        Comprova si un ítem no ha estat vist per un usuari.
+
+        Parameters
+        ----------
+        id_usuari : str
+            Identificador de l'usuari.
+        id_item : str
+            Identificador de l'ítem.
+
+        Returns
+        -------
+        bool
+            True si l'ítem no ha estat vist per l'usuari, False altrament.
+        """
         if self._mat[self._ll_usuaris.index(id_usuari), self._ll_items.index(str(id_item))] == 0:
             return True
         else:
             return False
     
     def similitud(self,usuari_client,usuari_secundari):
+        """
+        Calcula la similitud entre dos usuaris.
+
+        Parameters
+        ----------
+        usuari_client : str
+            Identificador de l'usuari client.
+        usuari_secundari : str
+            Identificador de l'usuari secundari.
+
+        Returns
+        -------
+        float
+            Similitud entre els dos usuaris.
+        """
         numerador=0
         denominador1=0
         denominador2=0
@@ -92,12 +246,46 @@ class Score(metaclass=ABCMeta):
     
     
     def vector_puntuacions(self, id_user):
+        """
+        Retorna el vector de puntuacions d'un usuari.
+
+        Parameters
+        ----------
+        id_user : str
+            Identificador de l'usuari.
+
+        Returns
+        -------
+        np.ndarray
+            Vector de puntuacions de l'usuari.
+        """
         return self._mat[self._ll_usuaris.index(id_user),:]
     
     def max(self):
+        """
+        Retorna la puntuació màxima en la matriu.
+
+        Returns
+        -------
+        float
+            Puntuació màxima en la matriu.
+        """
         return self._mat.max()
     
     def item_features(self, fitxer_items):
+        """
+        Retorna les característiques dels ítems.
+
+        Parameters
+        ----------
+        fitxer_items : str
+            Nom del fitxer d'ítems.
+
+        Returns
+        -------
+        list
+            Llista de característiques dels ítems.
+        """
         item_features = []
         with open(fitxer_items, 'r') as f:
             next(f)
@@ -110,6 +298,14 @@ class Score(metaclass=ABCMeta):
         return item_features
 
 class ScoreMovies(Score):
+    """
+    Classe per calcular puntuacions de pel·lícules.
+
+    Methods
+    -------
+    __init__(fitxer_items, fitxer_valoracions)
+        Inicialitza un nou objecte ScoreMovies.
+    """
     
     _ll_usuaris = set 
     _ll_items = set
@@ -117,6 +313,16 @@ class ScoreMovies(Score):
     _n_items = int
     
     def __init__(self, fitxer_items,fitxer_valoracions):
+        """
+        Inicialitza un nou objecte ScoreMovies.
+
+        Parameters
+        ----------
+        fitxer_items : str
+            Nom del fitxer d'ítems.
+        fitxer_valoracions : str
+            Nom del fitxer de valoracions.
+        """
         super().__init__(fitxer_items, fitxer_valoracions) 
         
         logging.info("Inicialitzant ScoreMovies")
@@ -146,6 +352,14 @@ class ScoreMovies(Score):
 
 
 class ScoreBooks(Score):
+    """
+    Classe per calcular puntuacions de llibres.
+
+    Methods
+    -------
+    __init__(fitxer_items, fitxer_valoracions)
+        Inicialitza un nou objecte ScoreBooks.
+    """
      
     _ll_usuaris = set 
     _ll_items = set
@@ -153,13 +367,23 @@ class ScoreBooks(Score):
     _n_items = int
     
     def __init__(self, fitxer_items,fitxer_valoracions):
+        """
+        Inicialitza un nou objecte ScoreBooks.
+
+        Parameters
+        ----------
+        fitxer_items : str
+            Nom del fitxer d'ítems.
+        fitxer_valoracions : str
+            Nom del fitxer de valoracions.
+        """
         super().__init__(fitxer_items, fitxer_valoracions) 
         
         logging.info("Inicialitzant ScoreBooks")
         with open(fitxer_items, 'r') as f:
            next(f)
            for line in f:
-               if len(self._ll_items) < 10000:
+               if len(self._ll_items) < 1000:
                    line=line.strip().split(',')
                    id_item = line[0]
                    self._ll_items.add(id_item)
@@ -185,19 +409,12 @@ class ScoreBooks(Score):
             next(f) 
             i = 0
             for line in f:
-               if i < 10000:
+               if i < 1000:
                    line = line.strip().split(',')
                    
                    id_usuari = line[0]
                    id_item = line[1]
                    score = float(line[2])
-                   #print('line', line)
-                   #print('id_usuari', id_usuari)
-                   #print('id_item', id_item)
-                   #print('score', score)
-                   #id_usuari, id_item, score = line.strip().split(',')
-                   #score = float(score)
-                   #print(i)
                    if (id_usuari in self._ll_usuaris) and (id_item in self._ll_items):
                        self._mat[self._ll_usuaris.index(id_usuari), self._ll_items.index(id_item)] = score
                    i += 1

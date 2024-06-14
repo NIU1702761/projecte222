@@ -1,18 +1,45 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-
+from sklearn.feature_extraction.text import TfidfVectorizer
 from score import Score, ScoreBooks, ScoreMovies
 from abc import ABCMeta, abstractmethod
 import numpy as np
-from sklearn.feature_extraction.text import TfidfVectorizer
-import csv
 import logging
-
+import csv
 
 class Recomanacio(metaclass=ABCMeta):
+    """
+    Classe base per a les recomanacions.
+
+    Attributes
+    ----------
+    _score : Score
+        Objecte per calcular puntuacions.
+
+    Methods
+    -------
+    recomana_per(id_usuari):
+        Retorna una llista d'ítems recomanats per a l'usuari.
+    valoracions_usuari(id_usuari):
+        Retorna les valoracions de l'usuari.
+    """
+    
     _score = Score
     
     def __init__(self, fitxer_items: str, fitxer_valoracions:str, dataset: str):
+        """
+        Inicialitza un nou objecte de recomanació.
+
+        Parameters
+        ----------
+        fitxer_items : str
+            Nom del fitxer d'ítems.
+        fitxer_valoracions : str
+            Nom del fitxer de valoracions.
+        dataset : str
+            Nom del dataset ('movielens100k' o 'books').
+        """
+        
         logging.info(f"Inicialitzant Recomanacio")
         if dataset == 'movielens100k':
             self._score = ScoreMovies(fitxer_items, fitxer_valoracions)
@@ -20,24 +47,87 @@ class Recomanacio(metaclass=ABCMeta):
             self._score = ScoreBooks(fitxer_items, fitxer_valoracions)
     
     def recomana_per(self, id_usuari):
-        ll_items = self._score.ll_items().copy()
+        """
+        Retorna una llista d'ítems recomanats per a l'usuari.
+
+        Parameters
+        ----------
+        id_usuari : str
+            Identificador de l'usuari.
+
+        Returns
+        -------
+        list
+            Llista d'ítems recomanats per a l'usuari.
+        """
         
-        if id_usuari not in ll_items:
+        ll_usuaris = self._score.ll_usuaris().copy()
+        
+        if id_usuari not in ll_usuaris:
             logging.warning(f"usuari {id_usuari} no carregat.")
             return None
         else:
-            return ll_items
+            return self._score.ll_items()
     
     def valoracions_usuari(self, id_usuari):
+        """
+        Retorna les valoracions de l'usuari.
+
+        Parameters
+        ----------
+        id_usuari : str
+            Identificador de l'usuari.
+
+        Returns
+        -------
+        np.ndarray
+            Vector de puntuacions de l'usuari.
+        """
+        
         return self._score.vector_puntuacions(id_usuari)
 
 
 class RecomanacioSimple(Recomanacio):
+    """
+    Classe per a la recomanació simple.
+
+    Methods
+    -------
+    recomana_per(id_usuari):
+        Retorna una llista d'ítems recomanats per a l'usuari mitjançant el mètode simple.
+    """
     
-    def __init__(self, fitxer_items: str, fitxer_valoracions: str, dataset: str):    
+    def __init__(self, fitxer_items: str, fitxer_valoracions: str, dataset: str):  
+        """
+        Inicialitza un nou objecte de recomanació simple.
+
+        Parameters
+        ----------
+        fitxer_items : str
+            Nom del fitxer d'ítems.
+        fitxer_valoracions : str
+            Nom del fitxer de valoracions.
+        dataset : str
+            Nom del dataset ('movielens100k' o 'books').
+        """
+        
         super().__init__(fitxer_items, fitxer_valoracions, dataset)
     
     def recomana_per(self, id_usuari):
+        """
+        Retorna una llista d'ítems recomanats per a l'usuari mitjançant el mètode simple.
+
+        Parameters
+        ----------
+        id_usuari : str
+            Identificador de l'usuari.
+
+        Returns
+        -------
+        tuple
+            Vector de puntuacions i llista d'ítems recomanats.
+        """
+        
         ll_items = super().recomana_per(id_usuari)
         
         if ll_items is None:
@@ -70,11 +160,46 @@ class RecomanacioSimple(Recomanacio):
     
 
 class RecomanacioColaborativa(Recomanacio):
+    """
+    Classe per a la recomanació col·laborativa.
+
+    Methods
+    -------
+    recomana_per(id_usuari):
+        Retorna una llista d'ítems recomanats per a l'usuari mitjançant el mètode col·laboratiu.
+    """
     
-    def __init__(self, fitxer_items: str, fitxer_valoracions: str, dataset: str):    
+    def __init__(self, fitxer_items: str, fitxer_valoracions: str, dataset: str): 
+        """
+        Inicialitza un nou objecte de recomanació col·laborativa.
+
+        Parameters
+        ----------
+        fitxer_items : str
+            Nom del fitxer d'ítems.
+        fitxer_valoracions : str
+            Nom del fitxer de valoracions.
+        dataset : str
+            Nom del dataset ('movielens100k' o 'books').
+        """
+        
         super().__init__(fitxer_items, fitxer_valoracions, dataset)
     
     def recomana_per(self, id_usuari):
+        """
+        Retorna una llista d'ítems recomanats per a l'usuari mitjançant el mètode col·laboratiu.
+
+        Parameters
+        ----------
+        id_usuari : str
+            Identificador de l'usuari.
+
+        Returns
+        -------
+        tuple
+            Vector de puntuacions i llista d'ítems recomanats.
+        """
+        
         ll_items = super().recomana_per(id_usuari)
         
         if ll_items is None:
@@ -119,12 +244,45 @@ class RecomanacioColaborativa(Recomanacio):
 
 
 class RecomanacioBasadaEnContingut(Recomanacio):
+    """
+    Classe per a la recomanació basada en contingut.
+
+    Methods
+    -------
+    recomana_per(id_usuari):
+        Retorna una llista d'ítems recomanats per a l'usuari mitjançant el mètode basat en contingut.
+    """
     
-    def __init__(self, fitxer_items: str, fitxer_valoracions: str, dataset: str):    
+    def __init__(self, fitxer_items: str, fitxer_valoracions: str, dataset: str):   
+        """
+        Inicialitza un nou objecte de recomanació basada en contingut.
+
+        Parameters
+        ----------
+        fitxer_items : str
+            Nom del fitxer d'ítems.
+        fitxer_valoracions : str
+            Nom del fitxer de valoracions.
+        dataset : str
+            Nom del dataset ('movielens100k' o 'books').
+        """
         super().__init__(fitxer_items, fitxer_valoracions, dataset)
         self._fitxer_items = fitxer_items
         
     def recomana_per(self, id_usuari):
+        """
+        Retorna una llista d'ítems recomanats per a l'usuari mitjançant el mètode basat en contingut.
+
+        Parameters
+        ----------
+        id_usuari : str
+            Identificador de l'usuari.
+
+        Returns
+        -------
+        tuple
+            Vector de puntuacions i llista d'ítems recomanats.
+        """
         ll_items = super().recomana_per(id_usuari)
         
         if ll_items is None:
