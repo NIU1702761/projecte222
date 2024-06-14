@@ -84,3 +84,51 @@
 2024-06-14 16:47:01,280 | root | DEBUG | Creant item Book amb id: 0385504209
 2024-06-14 16:47:01,280 | root | DEBUG | Inicialitzant Item amb ID: 0385504209
 2024-06-14 16:47:03,302 | root | INFO | Sortint...
+2024-06-14 17:08:12,188 | root | INFO | Inicialitzant Recomender amb dataset: books i method: simple
+2024-06-14 17:08:12,188 | root | INFO | Inicialitzant Recomanacio
+2024-06-14 17:08:12,188 | root | INFO | Inicialitzant ScoreBooks
+2024-06-14 17:08:12,593 | root | INFO | Carregant dades de valoracions
+2024-06-14 17:08:17,050 | root | INFO | 0.0
+2024-06-14 17:08:17,050 | root | INFO | 8
+2024-06-14 17:08:17,050 | root | INFO | 0002005018
+2024-06-14 17:08:17,050 | root | INFO | Executant programa principal del recomender
+2024-06-14 17:13:39,770 | root | INFO | Inicialitzant Recomender amb dataset: books i method: simple
+2024-06-14 17:13:39,770 | root | INFO | Inicialitzant Recomanacio
+2024-06-14 17:13:39,770 | root | INFO | Inicialitzant ScoreBooks
+2024-06-14 17:13:41,374 | root | INFO | Carregant dades de valoracions
+2024-06-14 17:14:04,423 | root | INFO | 0.0
+2024-06-14 17:14:04,423 | root | INFO | 8
+2024-06-14 17:14:04,423 | root | INFO | 0002005018
+2024-06-14 17:14:04,423 | root | INFO | Executant programa principal del recomender
+2024-06-14 17:17:11,928 | root | INFO | Inicialitzant Recomender amb dataset: books i method: simple
+2024-06-14 17:17:11,934 | root | INFO | Inicialitzant Recomanacio
+2024-06-14 17:17:11,935 | root | INFO | Inicialitzant ScoreBooks
+2024-06-14 17:17:13,628 | root | INFO | Carregant dades de valoracions
+2024-06-14 17:17:33,895 | root | INFO | 0.0
+2024-06-14 17:17:33,895 | root | INFO | 8
+2024-06-14 17:17:33,897 | root | INFO | 0002005018
+2024-06-14 17:17:33,897 | root | INFO | Executant programa principal del recomender
+2024-06-14 17:21:44,134 | root | INFO | Avaluació per l'usuari: 4
+2024-06-14 17:21:44,142 | root | DEBUG | Recomanació Simple per l'usuari: 4
+2024-06-14 17:28:48,547 | root | INFO | Inicialitzant Recomender amb dataset: books i method: simple
+2024-06-14 17:28:48,547 | root | INFO | Inicialitzant Recomanacio
+2024-06-14 17:28:48,547 | root | INFO | Inicialitzant ScoreBooks
+2024-06-14 17:28:50,345 | root | INFO | Carregant dades de valoracions
+2024-06-14 17:29:34,902 | root | INFO | 5.0
+2024-06-14 17:29:34,902 | root | INFO | 8
+2024-06-14 17:29:34,902 | root | INFO | 0002005018
+2024-06-14 17:29:49,285 | root | INFO | Executant programa principal del recomender
+2024-06-14 17:30:03,547 | root | INFO | Recomanació per l'usuari: 1
+2024-06-14 17:30:03,555 | root | DEBUG | Recomanació Simple per l'usuari: 1
+2024-06-14 17:32:07,349 | root | DEBUG | Creant item Book amb id: 0380778556
+2024-06-14 17:32:07,349 | root | DEBUG | Inicialitzant Item amb ID: 0380778556
+2024-06-14 17:32:08,231 | root | DEBUG | Creant item Book amb id: 0440225701
+2024-06-14 17:32:08,231 | root | DEBUG | Inicialitzant Item amb ID: 0440225701
+2024-06-14 17:32:09,055 | root | DEBUG | Creant item Book amb id: 0452282152
+2024-06-14 17:32:09,055 | root | DEBUG | Inicialitzant Item amb ID: 0452282152
+2024-06-14 17:32:09,807 | root | DEBUG | Creant item Book amb id: 0440241073
+2024-06-14 17:32:09,807 | root | DEBUG | Inicialitzant Item amb ID: 0440241073
+2024-06-14 17:32:10,656 | root | DEBUG | Creant item Book amb id: 0671510053
+2024-06-14 17:32:10,656 | root | DEBUG | Inicialitzant Item amb ID: 0671510053
+2024-06-14 17:36:38,923 | root | INFO | Avaluació per l'usuari: 6
+2024-06-14 17:36:38,923 | root | DEBUG | Recomanació Simple per l'usuari: 6

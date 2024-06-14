@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-from abc import ABCMeta, abstractmethod
-from typing import List
 import numpy as np
-import logging
+from typing import List
+from abc import ABCMeta, abstractmethod
 import math
+from scipy.sparse import lil_matrix
 import csv
-
+import logging
 
 class Score(metaclass=ABCMeta):
     
@@ -17,16 +17,6 @@ class Score(metaclass=ABCMeta):
     _mat = np.array
     
     def __init__(self, fitxer_items,fitxer_valoracions):
-        """
-        Inicialitza un nou objecte Score.
-
-        Parameters
-        ----------
-        fitxer_items : str
-            Nom del fitxer d'ítems.
-        fitxer_valoracions : str
-            Nom del fitxer de valoracions.
-        """
         self._ll_usuaris = []
         self._ll_items = []
         self._mat = None
@@ -264,8 +254,8 @@ class ScoreMovies(Score):
         Inicialitza un nou objecte ScoreMovies.
     """
     
-    _ll_usuaris = set 
-    _ll_items = set
+    _ll_usuaris = list 
+    _ll_items = list
     _n_usuaris = int 
     _n_items = int
     
@@ -318,8 +308,8 @@ class ScoreBooks(Score):
         Inicialitza un nou objecte ScoreBooks.
     """
      
-    _ll_usuaris = set 
-    _ll_items = set
+    _ll_usuaris = list 
+    _ll_items = list
     _n_usuaris = int 
     _n_items = int
     
@@ -340,7 +330,7 @@ class ScoreBooks(Score):
         with open(fitxer_items, 'r') as f:
            next(f)
            for line in f:
-               if len(self._ll_items) < 1000:
+               if len(self._ll_items) < 10000:
                    line=line.strip().split(',')
                    id_item = line[0]
                    self._ll_items.append(id_item)
@@ -367,7 +357,7 @@ class ScoreBooks(Score):
             next(f) 
             i = 1
             for line in f:
-               if i < 1000:
+               if i < 10000:
                    line = line.strip().split(',')
                    
                    id_usuari = line[0]

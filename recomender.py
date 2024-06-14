@@ -1,11 +1,26 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 from recomanacions import RecomanacioSimple, RecomanacioBasadaEnContingut, RecomanacioColaborativa, Recomanacio
+from abc import ABCMeta, abstractmethod
 from items import Item, Movie, Book
 import numpy as np
 import logging
+import math
 
 class Recomender(metaclass=ABCMeta):
+    """
+    Classe base per als recomanadors de pel·lícules i llibres.
+    
+    Attributes
+    ----------
+    _recomanacio : Recomanacio
+        Objecte de recomanació.
+    _fitxer_items : str
+        Nom del fitxer d'ítems.
+    _fitxer_valoracions : str
+        Nom del fitxer de valoracions.
+    """
+
     _recomanacio = Recomanacio
     _fitxer_items = str
     _fitxer_valoracions = str
@@ -215,4 +230,3 @@ class RecomenderBooks(Recomender):
         """
         logging.debug(f"Creant item Book amb id: {id_item}")
         return Book(id_item, fitxer_items)
-

@@ -321,4 +321,3 @@ class RecomanacioBasadaEnContingut(Recomanacio):
             return p_final, items
 
 
-
