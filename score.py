@@ -10,15 +10,15 @@ import logging
 
 class Score(metaclass=ABCMeta):
     
-    _ll_usuaris = set 
-    _ll_items = set
+    _ll_usuaris = list 
+    _ll_items = list
     _n_usuaris = int 
     _n_items = int
     _mat = np.array
     
     def __init__(self, fitxer_items,fitxer_valoracions):
-        self._ll_usuaris = set()
-        self._ll_items = set()
+        self._ll_usuaris = []
+        self._ll_items = []
         self._mat = None
     
     def ll_items(self):
@@ -125,13 +125,13 @@ class ScoreMovies(Score):
             for line in f:
                 if len(self._ll_items) < 50000:
                     id_usuari, id_item, _ , _ = line.strip().split(',')
-                    self._ll_usuaris.add(id_usuari)
-                    self._ll_items.add(id_item)
+                    self._ll_usuaris.append(id_usuari)
+                    self._ll_items.append(id_item)
                 else:
                     break
 
-        self._ll_usuaris = list(sorted(self._ll_usuaris))
-        self._ll_items = list(sorted(self._ll_items))
+        #self._ll_usuaris = list(sorted(self._ll_usuaris))
+        #self._ll_items = list(sorted(self._ll_items))
         self._n_usuaris, self._n_items = len(self._ll_usuaris), len(self._ll_items)
         self._mat = np.zeros((self._n_usuaris, self._n_items), dtype='float16')
         
@@ -162,7 +162,7 @@ class ScoreBooks(Score):
                if len(self._ll_items) < 10000:
                    line=line.strip().split(',')
                    id_item = line[0]
-                   self._ll_items.add(id_item)
+                   self._ll_items.append(id_item)
                else:
                    break 
         with open('Books/Users.csv') as f:
@@ -170,11 +170,12 @@ class ScoreBooks(Score):
            for line in f:
                line=line.strip().split(',')
                id_usuari = line[0]
-               self._ll_usuaris.add(id_usuari)
+               self._ll_usuaris.append(id_usuari)
 
 
-        self._ll_usuaris = list(sorted(self._ll_usuaris))
-        self._ll_items = list(sorted(self._ll_items))
+        #self._ll_usuaris = list(sorted(self._ll_usuaris))
+        #self._ll_items = list(sorted(self._ll_items))
+        
         self._n_usuaris, self._n_items = len(self._ll_usuaris), len(self._ll_items)
         self._mat = np.zeros((self._n_usuaris, self._n_items), dtype='float16')
         
@@ -183,7 +184,7 @@ class ScoreBooks(Score):
         logging.info("Carregant dades de valoracions")
         with open(fitxer_valoracions, 'r') as f:
             next(f) 
-            i = 0
+            i = 1
             for line in f:
                if i < 10000:
                    line = line.strip().split(',')
@@ -202,6 +203,9 @@ class ScoreBooks(Score):
                        self._mat[self._ll_usuaris.index(id_usuari), self._ll_items.index(id_item)] = score
                    i += 1
                else:
+                   logging.info(self._mat[7,1])
+                   logging.info(self._ll_usuaris[7])
+                   logging.info(self._ll_items[1])
                    break
                
      
