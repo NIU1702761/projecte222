@@ -1,0 +1,86 @@
+2024-06-14 16:35:39,408 | root | INFO | Dataset: movielens100k
+2024-06-14 16:35:39,408 | root | INFO | Method: simple
+2024-06-14 16:35:39,408 | root | INFO | Creant recomender per a movielens100k amb el mètode simple
+2024-06-14 16:35:39,408 | root | INFO | Inicialitzant Recomender amb dataset: movielens100k i method: simple
+2024-06-14 16:35:39,408 | root | INFO | Inicialitzant Recomanacio
+2024-06-14 16:35:39,408 | root | INFO | Inicialitzant ScoreMovies
+2024-06-14 16:35:39,469 | root | INFO | Carregant dades de valoracions
+2024-06-14 16:35:43,358 | root | INFO | Executant programa principal del recomender
+2024-06-14 16:35:47,077 | root | INFO | Recomanació per l'usuari: 1
+2024-06-14 16:35:47,078 | root | DEBUG | Recomanació Simple per l'usuari: 1
+2024-06-14 16:35:51,234 | root | DEBUG | Creant item Movie amb id: 318
+2024-06-14 16:35:51,234 | root | DEBUG | Inicialitzant Item amb ID: 318
+2024-06-14 16:35:51,235 | root | DEBUG | Creant item Movie amb id: 858
+2024-06-14 16:35:51,235 | root | DEBUG | Inicialitzant Item amb ID: 858
+2024-06-14 16:35:51,236 | root | DEBUG | Creant item Movie amb id: 1221
+2024-06-14 16:35:51,236 | root | DEBUG | Inicialitzant Item amb ID: 1221
+2024-06-14 16:35:51,236 | root | DEBUG | Creant item Movie amb id: 750
+2024-06-14 16:35:51,236 | root | DEBUG | Inicialitzant Item amb ID: 750
+2024-06-14 16:35:51,236 | root | DEBUG | Creant item Movie amb id: 48516
+2024-06-14 16:35:51,236 | root | DEBUG | Inicialitzant Item amb ID: 48516
+2024-06-14 16:35:56,051 | root | INFO | Avaluació per l'usuari: 1
+2024-06-14 16:35:56,052 | root | DEBUG | Recomanació Simple per l'usuari: 1
+2024-06-14 16:35:57,757 | root | INFO | MAE: 0.9616594326076229
+2024-06-14 16:35:57,758 | root | INFO | RMSE: 1.091330026959932
+2024-06-14 16:36:01,418 | root | INFO | Sortint...
+2024-06-14 16:36:08,723 | root | INFO | Dataset: books
+2024-06-14 16:36:08,724 | root | INFO | Method: simple
+2024-06-14 16:36:08,724 | root | INFO | Creant recomender per a books amb el mètode simple
+2024-06-14 16:36:08,724 | root | INFO | Inicialitzant Recomender amb dataset: books i method: simple
+2024-06-14 16:36:08,724 | root | INFO | Inicialitzant Recomanacio
+2024-06-14 16:36:08,724 | root | INFO | Inicialitzant ScoreBooks
+2024-06-14 16:36:08,897 | root | INFO | Carregant dades de valoracions
+2024-06-14 16:36:32,129 | root | INFO | Executant programa principal del recomender
+2024-06-14 16:36:36,951 | root | INFO | Recomanació per l'usuari: 1
+2024-06-14 16:36:36,952 | root | WARNING | usuari 1 no carregat.
+2024-06-14 16:36:48,877 | root | INFO | Recomanació per l'usuari: 2069
+2024-06-14 16:36:48,878 | root | WARNING | usuari 2069 no carregat.
+2024-06-14 16:36:59,598 | root | INFO | Recomanació per l'usuari: 388
+2024-06-14 16:36:59,599 | root | WARNING | usuari 388 no carregat.
+2024-06-14 16:37:09,531 | root | INFO | Recomanació per l'usuari: 1
+2024-06-14 16:37:09,532 | root | WARNING | usuari 1 no carregat.
+2024-06-14 16:37:19,393 | root | INFO | Sortint...
+2024-06-14 16:38:29,764 | root | INFO | Dataset: books
+2024-06-14 16:38:29,764 | root | INFO | Method: simple
+2024-06-14 16:38:29,764 | root | INFO | Pickles existeixen -> Carregant recomender des de recomender_books_simple.dat
+2024-06-14 16:38:31,583 | root | INFO | Executant programa principal del recomender
+2024-06-14 16:38:35,414 | root | INFO | Recomanació per l'usuari: 1
+2024-06-14 16:38:35,419 | root | DEBUG | Recomanació Simple per l'usuari: 1
+2024-06-14 16:43:19,945 | root | INFO | Dataset: books
+2024-06-14 16:43:19,945 | root | INFO | Method: simple
+2024-06-14 16:43:19,945 | root | INFO | Creant recomender per a books amb el mètode simple
+2024-06-14 16:43:19,945 | root | INFO | Inicialitzant Recomender amb dataset: books i method: simple
+2024-06-14 16:43:19,945 | root | INFO | Inicialitzant Recomanacio
+2024-06-14 16:43:19,946 | root | INFO | Inicialitzant ScoreBooks
+2024-06-14 16:43:20,114 | root | INFO | Carregant dades de valoracions
+2024-06-14 16:43:22,128 | root | INFO | Executant programa principal del recomender
+2024-06-14 16:43:25,505 | root | INFO | Recomanació per l'usuari: 1
+2024-06-14 16:43:25,509 | root | DEBUG | Recomanació Simple per l'usuari: 1
+2024-06-14 16:43:37,693 | root | DEBUG | Creant item Book amb id: 0060930187
+2024-06-14 16:43:37,693 | root | DEBUG | Inicialitzant Item amb ID: 0060930187
+2024-06-14 16:43:38,046 | root | DEBUG | Creant item Book amb id: 0446310786
+2024-06-14 16:43:38,048 | root | DEBUG | Inicialitzant Item amb ID: 0446310786
+2024-06-14 16:43:38,399 | root | DEBUG | Creant item Book amb id: 1573229571
+2024-06-14 16:43:38,399 | root | DEBUG | Inicialitzant Item amb ID: 1573229571
+2024-06-14 16:43:38,751 | root | DEBUG | Creant item Book amb id: 2253063339
+2024-06-14 16:43:38,751 | root | DEBUG | Inicialitzant Item amb ID: 2253063339
+2024-06-14 16:43:39,103 | root | DEBUG | Creant item Book amb id: 0385504209
+2024-06-14 16:43:39,104 | root | DEBUG | Inicialitzant Item amb ID: 0385504209
+2024-06-14 16:44:11,449 | root | INFO | Sortint...
+2024-06-14 16:46:42,264 | root | INFO | Dataset: books
+2024-06-14 16:46:42,264 | root | INFO | Method: simple
+2024-06-14 16:46:42,264 | root | INFO | Pickles existeixen -> Carregant recomender des de recomender_books_simple.dat
+2024-06-14 16:46:42,480 | root | INFO | Executant programa principal del recomender
+2024-06-14 16:46:45,749 | root | INFO | Recomanació per l'usuari: 1
+2024-06-14 16:46:45,753 | root | DEBUG | Recomanació Simple per l'usuari: 1
+2024-06-14 16:46:59,881 | root | DEBUG | Creant item Book amb id: 0060930187
+2024-06-14 16:46:59,882 | root | DEBUG | Inicialitzant Item amb ID: 0060930187
+2024-06-14 16:47:00,235 | root | DEBUG | Creant item Book amb id: 0446310786
+2024-06-14 16:47:00,235 | root | DEBUG | Inicialitzant Item amb ID: 0446310786
+2024-06-14 16:47:00,584 | root | DEBUG | Creant item Book amb id: 1573229571
+2024-06-14 16:47:00,584 | root | DEBUG | Inicialitzant Item amb ID: 1573229571
+2024-06-14 16:47:00,932 | root | DEBUG | Creant item Book amb id: 2253063339
+2024-06-14 16:47:00,932 | root | DEBUG | Inicialitzant Item amb ID: 2253063339
+2024-06-14 16:47:01,280 | root | DEBUG | Creant item Book amb id: 0385504209
+2024-06-14 16:47:01,280 | root | DEBUG | Inicialitzant Item amb ID: 0385504209
+2024-06-14 16:47:03,302 | root | INFO | Sortint...
