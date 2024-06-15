@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 from recomanacions import RecomanacioSimple, RecomanacioBasadaEnContingut, RecomanacioColaborativa, Recomanacio
 from abc import ABCMeta, abstractmethod
-from items import Item, Movie, Book
+from items import Item, Movie, Book, Anime
 import numpy as np
 import logging
 import math
@@ -230,3 +230,62 @@ class RecomenderBooks(Recomender):
         """
         logging.debug(f"Creant item Book amb id: {id_item}")
         return Book(id_item, fitxer_items)
+    
+
+class RecomenderAnimes(Recomender):
+    """
+    Classe per al recomanador d'animes.
+    
+    Attributes
+    ----------
+    _recomanacio : Recomanacio
+        Objecte de recomanació.
+    _fitxer_items : str
+        Nom del fitxer d'ítems.
+    _fitxer_valoracions : str
+        Nom del fitxer de valoracions.
+    """
+    
+    
+    _recomanacio = Recomanacio
+    _fitxer_items = str
+    _fitxer_valoracions = str
+    
+    
+    def __init__(self, dataset: str, method:str):
+        """
+        Inicialitza un nou recomanador de videojocs.
+
+        Parameters
+        ----------
+        dataset : str
+            Nom del dataset a utilitzar ('Books', 'MovieLens100K', 'Videogames').
+        method : str
+            Mètode de recomanació ('simple', 'colaboratiu', 'basat en contingut').
+        """
+        
+        self._fitxer_items = 'AnimeData/anime.csv'
+        self._fitxer_valoracions = 'AnimeData/rating.csv'
+        super().__init__(dataset, method)
+    
+    def crea_item(self, id_item, fitxer_items):
+        """
+        Crea un objecte anime.
+
+        Parameters
+        ----------
+        id_item : str
+            Identificador de l'anime'.
+        fitxer_valoracions : str
+            Nom del fitxer de valoracions.
+        fitxer_items : str
+            Nom del fitxer d'ítems.
+
+        Returns
+        -------
+        Anime
+            Objecte anime.
+        """
+        
+        logging.debug(f"Creant item Movie amb id: {id_item}")
+        return Anime(id_item, fitxer_items)

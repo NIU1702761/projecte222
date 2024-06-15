@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from recomender import RecomenderMovies, RecomenderBooks
+from recomender import RecomenderMovies, RecomenderBooks, RecomenderAnimes
 import argparse
 import os 
 import pickle
@@ -13,7 +13,7 @@ console.setLevel(logging.INFO)
 formatter = logging.Formatter('%(asctime)s | %(name)s | %(levelname)s | %(message)s')
 console.setFormatter(formatter)
 logging.getLogger().addHandler(console)
-
+"""
 parser = argparse.ArgumentParser()
 parser.add_argument('dataset')
 parser.add_argument('method')
@@ -22,11 +22,11 @@ args = vars(parser.parse_args())
 dataset = str(args['dataset']).lower()
 method = str(args['method']).lower()
 
-datasets = ['movielens100k', 'books']
+datasets = ['movielens100k', 'books', 'animedata']
 methods = ['simple','colaboratiu','basat en contingut']
 
 while (dataset not in datasets) or (method not in methods):
-    print("ERROR: Dataset ha de ser: 'MovieLens100K' o 'Books'.")
+    print("ERROR: Dataset ha de ser: 'MovieLens100K', 'Books' o 'Animes'.")
     print("ERROR: Method ha de ser: 'simple', 'colaboratiu' o 'basat en contingut'")
     if method not in methods:
         method = input('Method: ')
@@ -47,11 +47,13 @@ else:
     logging.info(f"Creant recomender per a {dataset} amb el mètode {method}")
     if dataset == 'books':
         r = RecomenderBooks(dataset, method)
-    else:
+    elif dataset == 'movielens100k':
         r = RecomenderMovies(dataset, method)
+    else:
+        r = RecomenderAnimes(dataset, method)
     with open(arxiu_pickles, 'wb') as f: 
         pickle.dump(r, f)
-
-#r = RecomenderMovies('movielens100k', 'simple')
+"""
+r = RecomenderAnimes('animedata', 'basat en contingut')
 logging.info("Executant programa principal del recomender")
 r.programa_principal()

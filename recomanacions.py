@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 from sklearn.feature_extraction.text import TfidfVectorizer
-from score import Score, ScoreBooks, ScoreMovies
+from score import Score, ScoreBooks, ScoreMovies, ScoreAnimes
 from abc import ABCMeta, abstractmethod
 import numpy as np
 import logging
@@ -43,8 +43,10 @@ class Recomanacio(metaclass=ABCMeta):
         logging.info(f"Inicialitzant Recomanacio")
         if dataset == 'movielens100k':
             self._score = ScoreMovies(fitxer_items, fitxer_valoracions)
-        else:
+        elif dataset == 'books':
             self._score = ScoreBooks(fitxer_items, fitxer_valoracions)
+        else:
+            self._score = ScoreAnimes(fitxer_items, fitxer_valoracions)
     
     def recomana_per(self, id_usuari):
         """
@@ -146,15 +148,16 @@ class RecomanacioSimple(Recomanacio):
                 puntuacions[ll_items.index(id_item)] = puntuacio
             
             copia_puntuacions = puntuacions.copy()
-            copia_puntuacions = copia_puntuacions.tolist()
+            copia_puntuacions2 = copia_puntuacions.tolist()
             items = []
             while len(items) < 5:
-                index_maxim = copia_puntuacions.index(max(copia_puntuacions))
+                index_maxim = copia_puntuacions2.index(max(copia_puntuacions2))
+                logging.info(f"Màxim: {max(copia_puntuacions2)}")
                 id_item = ll_items[index_maxim]
                 if id_item in items_a_considerar:
                     if self._score.no_vista(id_usuari, id_item):
                         items.append(id_item)
-                copia_puntuacions.pop(index_maxim)
+                copia_puntuacions2.pop(index_maxim)
                 ll_items.pop(index_maxim)
             return puntuacions, items
     

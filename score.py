@@ -234,7 +234,7 @@ class Score(metaclass=ABCMeta):
             Llista de característiques dels ítems.
         """
         item_features = []
-        with open(fitxer_items, 'r') as f:
+        with open(fitxer_items, 'r', encoding='utf-8') as f:
             next(f)
             reader = csv.reader(f)
             for line in reader:
@@ -278,13 +278,15 @@ class ScoreMovies(Score):
             for line in f:
                 if len(self._ll_items) < 50000:
                     id_usuari, id_item, _ , _ = line.strip().split(',')
-                    self._ll_usuaris.append(id_usuari)
-                    self._ll_items.append(id_item)
+                    if id_usuari not in self._ll_usuaris:
+                        self._ll_usuaris.append(id_usuari)
+                    if id_item not in self._ll_items:    
+                        self._ll_items.append(id_item)
                 else:
                     break
 
-        #self._ll_usuaris = list(sorted(self._ll_usuaris))
-        #self._ll_items = list(sorted(self._ll_items))
+        #self._ll_usuaris = list(sorted(set(self._ll_usuaris)))
+        #self._ll_items = list(sorted(set(self._ll_items)))
         self._n_usuaris, self._n_items = len(self._ll_usuaris), len(self._ll_items)
         self._mat = np.zeros((self._n_usuaris, self._n_items), dtype='float16')
         
@@ -373,3 +375,58 @@ class ScoreBooks(Score):
                    break
                
      
+class ScoreAnimes(Score):
+    """
+    Classe per calcular puntuacions d'animes.
+
+    Methods
+    -------
+    __init__(fitxer_items, fitxer_valoracions)
+        Inicialitza un nou objecte ScoreAnimes.
+    """
+    
+    _ll_usuaris = list 
+    _ll_items = list
+    _n_usuaris = int 
+    _n_items = int
+    
+    def __init__(self, fitxer_items,fitxer_valoracions):
+        """
+        Inicialitza un nou objecte ScoreAnimes.
+
+        Parameters
+        ----------
+        fitxer_items : str
+            Nom del fitxer d'ítems.
+        fitxer_valoracions : str
+            Nom del fitxer de valoracions.
+        """
+        super().__init__(fitxer_items, fitxer_valoracions) 
+        
+        logging.info("Inicialitzant ScoreAnimes")       #Potser fer que la carrega sigui una funcion en comptes de a l'init per fer herència amb Movies?
+        with open(fitxer_valoracions, 'r') as f:
+            next(f) 
+            for line in f:
+                if len(self._ll_items) < 50000:
+                    id_usuari, id_item, _ = line.strip().split(',')
+                    if id_usuari not in self._ll_usuaris:
+                        self._ll_usuaris.append(id_usuari)
+                    if id_item not in self._ll_items:    
+                        self._ll_items.append(id_item)
+                else:
+                    break
+
+        #self._ll_usuaris = list(sorted(set(self._ll_usuaris)))
+        #self._ll_items = list(sorted(set(self._ll_items)))
+        self._n_usuaris, self._n_items = len(self._ll_usuaris), len(self._ll_items)
+        self._mat = np.zeros((self._n_usuaris, self._n_items), dtype='float16')
+        
+        logging.info("Carregant dades de valoracions")
+        with open(fitxer_valoracions, 'r') as f:
+            next(f) 
+            for line in f:
+                id_usuari, id_item, score = line.strip().split(',')
+                score = 0 if float(score) == -1 else float(score)
+                self._mat[self._ll_usuaris.index(id_usuari), self._ll_items.index(id_item)] = score 
+    
+

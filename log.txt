@@ -132,3 +132,231 @@
 2024-06-14 17:32:10,656 | root | DEBUG | Inicialitzant Item amb ID: 0671510053
 2024-06-14 17:36:38,923 | root | INFO | Avaluació per l'usuari: 6
 2024-06-14 17:36:38,923 | root | DEBUG | Recomanació Simple per l'usuari: 6
+2024-06-14 17:44:15,652 | root | INFO | Inicialitzant Recomender amb dataset: books i method: simple
+2024-06-14 17:44:15,652 | root | INFO | Inicialitzant Recomanacio
+2024-06-14 17:44:15,659 | root | INFO | Inicialitzant ScoreBooks
+2024-06-14 17:44:16,006 | root | INFO | Carregant dades de valoracions
+2024-06-14 17:44:58,877 | root | INFO | 5.0
+2024-06-14 17:44:58,877 | root | INFO | 8
+2024-06-14 17:44:58,877 | root | INFO | 0002005018
+2024-06-14 17:44:58,877 | root | INFO | Executant programa principal del recomender
+2024-06-14 17:45:18,392 | root | INFO | Avaluació per l'usuari: 1
+2024-06-14 17:45:18,392 | root | DEBUG | Recomanació Simple per l'usuari: 1
+2024-06-14 17:47:31,146 | root | INFO | MAE: nan
+2024-06-14 17:47:31,146 | root | INFO | RMSE: nan
+2024-06-14 17:52:24,598 | root | INFO | Avaluació per l'usuari: 7
+2024-06-14 17:52:24,604 | root | DEBUG | Recomanació Simple per l'usuari: 7
+2024-06-14 19:59:06,784 | numexpr.utils | INFO | Note: NumExpr detected 16 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2024-06-14 19:59:06,784 | numexpr.utils | INFO | NumExpr defaulting to 8 threads.
+2024-06-14 20:02:55,613 | root | INFO | Inicialitzant Recomender amb dataset: books i method: simple
+2024-06-14 20:02:55,614 | root | INFO | Inicialitzant Recomanacio
+2024-06-14 20:02:55,614 | root | INFO | Inicialitzant ScoreBooks
+2024-06-14 20:02:55,859 | root | INFO | Carregant dades de valoracions
+2024-06-14 20:03:26,228 | root | INFO | 5.0
+2024-06-14 20:03:26,228 | root | INFO | 8
+2024-06-14 20:03:26,229 | root | INFO | 0002005018
+2024-06-14 20:03:26,229 | root | INFO | Executant programa principal del recomender
+2024-06-14 20:03:44,426 | root | INFO | Avaluació per l'usuari: 1
+2024-06-14 20:03:44,430 | root | DEBUG | Recomanació Simple per l'usuari: 1
+2024-06-14 20:07:47,569 | root | INFO | Inicialitzant Recomender amb dataset: books i method: simple
+2024-06-14 20:07:47,570 | root | INFO | Inicialitzant Recomanacio
+2024-06-14 20:07:47,570 | root | INFO | Inicialitzant ScoreBooks
+2024-06-14 20:07:47,795 | root | INFO | Carregant dades de valoracions
+2024-06-14 20:08:18,165 | root | INFO | 5.0
+2024-06-14 20:08:18,165 | root | INFO | 8
+2024-06-14 20:08:18,165 | root | INFO | 0002005018
+2024-06-14 20:08:18,166 | root | INFO | Executant programa principal del recomender
+2024-06-14 20:08:23,215 | root | INFO | Avaluació per l'usuari: 1
+2024-06-14 20:08:23,219 | root | DEBUG | Recomanació Simple per l'usuari: 1
+2024-06-14 20:11:20,459 | numexpr.utils | INFO | Note: NumExpr detected 16 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2024-06-14 20:11:20,459 | numexpr.utils | INFO | NumExpr defaulting to 8 threads.
+2024-06-14 20:12:39,210 | root | INFO | Inicialitzant Recomender amb dataset: books i method: simple
+2024-06-14 20:12:39,211 | root | INFO | Inicialitzant Recomanacio
+2024-06-14 20:12:39,212 | root | INFO | Inicialitzant ScoreBooks
+2024-06-14 20:12:39,436 | root | INFO | Carregant dades de valoracions
+2024-06-14 20:13:09,827 | root | INFO | 5.0
+2024-06-14 20:13:09,827 | root | INFO | 8
+2024-06-14 20:13:09,828 | root | INFO | 0002005018
+2024-06-14 20:13:09,828 | root | INFO | Executant programa principal del recomender
+2024-06-14 20:13:52,623 | root | INFO | Avaluació per l'usuari: 1
+2024-06-14 20:13:52,627 | root | DEBUG | Recomanació Simple per l'usuari: 1
+2024-06-14 20:18:05,894 | root | INFO | Màxim: nan
+2024-06-14 20:22:49,935 | root | INFO | Inicialitzant Recomender amb dataset: movielens100k i method: simple
+2024-06-14 20:22:49,936 | root | INFO | Inicialitzant Recomanacio
+2024-06-14 20:22:49,936 | root | INFO | Inicialitzant ScoreMovies
+2024-06-14 20:22:49,992 | root | INFO | Carregant dades de valoracions
+2024-06-14 20:26:37,421 | root | INFO | Inicialitzant Recomender amb dataset: movielens100k i method: simple
+2024-06-14 20:26:37,422 | root | INFO | Inicialitzant Recomanacio
+2024-06-14 20:26:37,423 | root | INFO | Inicialitzant ScoreMovies
+2024-06-14 20:26:37,484 | root | INFO | Carregant dades de valoracions
+2024-06-14 20:27:50,669 | root | INFO | Inicialitzant Recomender amb dataset: movielens100k i method: simple
+2024-06-14 20:27:50,671 | root | INFO | Inicialitzant Recomanacio
+2024-06-14 20:27:50,671 | root | INFO | Inicialitzant ScoreMovies
+2024-06-14 20:27:50,725 | root | INFO | Carregant dades de valoracions
+2024-06-15 21:07:46,989 | root | INFO | Inicialitzant Recomender amb dataset: movielens100k i method: simple
+2024-06-15 21:07:46,990 | root | INFO | Inicialitzant Recomanacio
+2024-06-15 21:07:46,990 | root | INFO | Inicialitzant ScoreMovies
+2024-06-15 21:07:49,065 | root | INFO | Carregant dades de valoracions
+2024-06-15 21:07:51,151 | root | INFO | Executant programa principal del recomender
+2024-06-15 21:07:56,701 | root | INFO | Recomanació per l'usuari: 1
+2024-06-15 21:07:56,702 | root | DEBUG | Recomanació Simple per l'usuari: 1
+2024-06-15 21:08:00,118 | root | INFO | Màxim: 4.415953758137512
+2024-06-15 21:08:35,595 | root | INFO | Inicialitzant Recomender amb dataset: movielens100k i method: simple
+2024-06-15 21:08:35,596 | root | INFO | Inicialitzant Recomanacio
+2024-06-15 21:08:35,597 | root | INFO | Inicialitzant ScoreMovies
+2024-06-15 21:08:37,680 | root | INFO | Carregant dades de valoracions
+2024-06-15 21:08:39,751 | root | INFO | Executant programa principal del recomender
+2024-06-15 21:08:43,594 | root | INFO | Recomanació per l'usuari: 1
+2024-06-15 21:08:43,595 | root | DEBUG | Recomanació Simple per l'usuari: 1
+2024-06-15 21:08:46,784 | root | INFO | Màxim: 4.419099264489598
+2024-06-15 21:08:46,785 | root | INFO | Màxim: 4.354620648788335
+2024-06-15 21:08:46,785 | root | INFO | Màxim: 4.323133788550943
+2024-06-15 21:08:46,786 | root | INFO | Màxim: 4.31350774190512
+2024-06-15 21:08:46,786 | root | INFO | Màxim: 4.299126829583961
+2024-06-15 21:08:46,787 | root | DEBUG | Creant item Movie amb id: 318
+2024-06-15 21:08:46,787 | root | DEBUG | Inicialitzant Item amb ID: 318
+2024-06-15 21:08:46,815 | root | DEBUG | Creant item Movie amb id: 177593
+2024-06-15 21:08:46,815 | root | DEBUG | Inicialitzant Item amb ID: 177593
+2024-06-15 21:08:46,823 | root | DEBUG | Creant item Movie amb id: 1104
+2024-06-15 21:08:46,823 | root | DEBUG | Inicialitzant Item amb ID: 1104
+2024-06-15 21:08:46,824 | root | DEBUG | Creant item Movie amb id: 1041
+2024-06-15 21:08:46,824 | root | DEBUG | Inicialitzant Item amb ID: 1041
+2024-06-15 21:08:46,826 | root | DEBUG | Creant item Movie amb id: 6460
+2024-06-15 21:08:46,826 | root | DEBUG | Inicialitzant Item amb ID: 6460
+2024-06-15 23:19:34,798 | root | INFO | Inicialitzant Recomender amb dataset: animedata i method: simple
+2024-06-15 23:19:34,799 | root | INFO | Inicialitzant Recomanacio
+2024-06-15 23:19:34,799 | root | INFO | Inicialitzant ScoreAnimes
+2024-06-15 23:20:31,071 | root | INFO | Inicialitzant Recomender amb dataset: animedata i method: simple
+2024-06-15 23:20:31,071 | root | INFO | Inicialitzant Recomanacio
+2024-06-15 23:20:31,072 | root | INFO | Inicialitzant ScoreAnimes
+2024-06-15 23:28:38,899 | root | INFO | Inicialitzant Recomender amb dataset: animedata i method: simple
+2024-06-15 23:28:38,899 | root | INFO | Inicialitzant Recomanacio
+2024-06-15 23:28:38,900 | root | INFO | Inicialitzant ScoreAnimes
+2024-06-15 23:29:28,145 | root | INFO | Inicialitzant Recomender amb dataset: animedata i method: simple
+2024-06-15 23:29:28,146 | root | INFO | Inicialitzant Recomanacio
+2024-06-15 23:29:28,147 | root | INFO | Inicialitzant ScoreAnimes
+2024-06-15 23:30:28,296 | root | INFO | Inicialitzant Recomender amb dataset: animedata i method: simple
+2024-06-15 23:30:28,297 | root | INFO | Inicialitzant Recomanacio
+2024-06-15 23:30:28,297 | root | INFO | Inicialitzant ScoreAnimes
+2024-06-15 23:30:28,930 | root | INFO | Carregant dades de valoracions
+2024-06-15 23:30:29,590 | root | INFO | Executant programa principal del recomender
+2024-06-15 23:30:36,811 | root | INFO | Recomanació per l'usuari: 1
+2024-06-15 23:30:36,812 | root | DEBUG | Recomanació Simple per l'usuari: 1
+2024-06-15 23:30:40,119 | root | INFO | Màxim: 9.33378694960192
+2024-06-15 23:30:40,120 | root | INFO | Màxim: 9.313649772661662
+2024-06-15 23:30:40,121 | root | INFO | Màxim: 9.229999542850052
+2024-06-15 23:30:40,121 | root | INFO | Màxim: 9.182778863205213
+2024-06-15 23:30:40,121 | root | INFO | Màxim: 9.178470676060913
+2024-06-15 23:30:40,122 | root | DEBUG | Creant item Movie amb id: 11061
+2024-06-15 23:30:40,122 | root | DEBUG | Inicialitzant Item amb ID: 11061
+2024-06-15 23:30:40,139 | root | DEBUG | Creant item Movie amb id: 9253
+2024-06-15 23:30:40,139 | root | DEBUG | Inicialitzant Item amb ID: 9253
+2024-06-15 23:30:40,140 | root | DEBUG | Creant item Movie amb id: 5114
+2024-06-15 23:30:40,140 | root | DEBUG | Inicialitzant Item amb ID: 5114
+2024-06-15 23:30:40,141 | root | DEBUG | Creant item Movie amb id: 15335
+2024-06-15 23:30:40,141 | root | DEBUG | Inicialitzant Item amb ID: 15335
+2024-06-15 23:30:40,143 | root | DEBUG | Creant item Movie amb id: 199
+2024-06-15 23:30:40,143 | root | DEBUG | Inicialitzant Item amb ID: 199
+2024-06-15 23:34:23,256 | root | INFO | Inicialitzant Recomender amb dataset: animedata i method: simple
+2024-06-15 23:34:23,257 | root | INFO | Inicialitzant Recomanacio
+2024-06-15 23:34:23,258 | root | INFO | Inicialitzant ScoreAnimes
+2024-06-15 23:34:23,897 | root | INFO | Carregant dades de valoracions
+2024-06-15 23:34:24,545 | root | INFO | Executant programa principal del recomender
+2024-06-15 23:34:33,363 | root | INFO | Recomanació per l'usuari: 1
+2024-06-15 23:34:33,364 | root | DEBUG | Recomanació Simple per l'usuari: 1
+2024-06-15 23:34:35,251 | root | INFO | Màxim: 9.30651470823889
+2024-06-15 23:34:35,252 | root | INFO | Màxim: 9.302414860272341
+2024-06-15 23:34:35,252 | root | INFO | Màxim: 9.221742545127686
+2024-06-15 23:34:35,253 | root | INFO | Màxim: 9.166681637007072
+2024-06-15 23:34:35,253 | root | INFO | Màxim: 9.11774332172071
+2024-06-15 23:34:35,254 | root | DEBUG | Creant item Movie amb id: 11061
+2024-06-15 23:34:35,254 | root | DEBUG | Inicialitzant Item amb ID: 11061
+2024-06-15 23:34:35,255 | root | DEBUG | Creant item Movie amb id: 9253
+2024-06-15 23:34:35,255 | root | DEBUG | Inicialitzant Item amb ID: 9253
+2024-06-15 23:34:35,255 | root | DEBUG | Creant item Movie amb id: 5114
+2024-06-15 23:34:35,255 | root | DEBUG | Inicialitzant Item amb ID: 5114
+2024-06-15 23:34:35,256 | root | DEBUG | Creant item Movie amb id: 199
+2024-06-15 23:34:35,256 | root | DEBUG | Inicialitzant Item amb ID: 199
+2024-06-15 23:34:35,256 | root | DEBUG | Creant item Movie amb id: 15335
+2024-06-15 23:34:35,256 | root | DEBUG | Inicialitzant Item amb ID: 15335
+2024-06-15 23:36:55,184 | root | INFO | Avaluació per l'usuari: 1
+2024-06-15 23:36:55,184 | root | DEBUG | Recomanació Simple per l'usuari: 1
+2024-06-15 23:36:58,191 | root | INFO | Màxim: 9.33378694960192
+2024-06-15 23:36:58,193 | root | INFO | Màxim: 9.313649772661662
+2024-06-15 23:36:58,193 | root | INFO | Màxim: 9.229999542850052
+2024-06-15 23:36:58,193 | root | INFO | Màxim: 9.182778863205213
+2024-06-15 23:36:58,194 | root | INFO | Màxim: 9.178470676060913
+2024-06-15 23:37:24,329 | root | INFO | Inicialitzant Recomender amb dataset: animedata i method: simple
+2024-06-15 23:37:24,330 | root | INFO | Inicialitzant Recomanacio
+2024-06-15 23:37:24,330 | root | INFO | Inicialitzant ScoreAnimes
+2024-06-15 23:37:24,950 | root | INFO | Carregant dades de valoracions
+2024-06-15 23:37:25,619 | root | INFO | Executant programa principal del recomender
+2024-06-15 23:38:00,128 | root | INFO | Inicialitzant Recomender amb dataset: animedata i method: colaboratiu
+2024-06-15 23:38:00,129 | root | INFO | Inicialitzant Recomanacio
+2024-06-15 23:38:00,129 | root | INFO | Inicialitzant ScoreAnimes
+2024-06-15 23:38:00,760 | root | INFO | Carregant dades de valoracions
+2024-06-15 23:38:01,399 | root | INFO | Executant programa principal del recomender
+2024-06-15 23:38:08,825 | root | INFO | Recomanació per l'usuari: 1
+2024-06-15 23:38:08,826 | root | DEBUG | Recomanació Colaborativa per l'usuari: 1
+2024-06-15 23:38:10,489 | root | DEBUG | Creant item Movie amb id: 10793
+2024-06-15 23:38:10,490 | root | DEBUG | Inicialitzant Item amb ID: 10793
+2024-06-15 23:38:10,492 | root | DEBUG | Creant item Movie amb id: 4181
+2024-06-15 23:38:10,492 | root | DEBUG | Inicialitzant Item amb ID: 4181
+2024-06-15 23:38:10,493 | root | DEBUG | Creant item Movie amb id: 16498
+2024-06-15 23:38:10,493 | root | DEBUG | Inicialitzant Item amb ID: 16498
+2024-06-15 23:38:10,493 | root | DEBUG | Creant item Movie amb id: 2167
+2024-06-15 23:38:10,494 | root | DEBUG | Inicialitzant Item amb ID: 2167
+2024-06-15 23:38:10,494 | root | DEBUG | Creant item Movie amb id: 7593
+2024-06-15 23:38:10,494 | root | DEBUG | Inicialitzant Item amb ID: 7593
+2024-06-15 23:38:46,149 | root | INFO | Inicialitzant Recomender amb dataset: animedata i method: basat en contingut
+2024-06-15 23:38:46,150 | root | INFO | Inicialitzant Recomanacio
+2024-06-15 23:38:46,151 | root | INFO | Inicialitzant ScoreAnimes
+2024-06-15 23:38:46,780 | root | INFO | Carregant dades de valoracions
+2024-06-15 23:38:47,430 | root | INFO | Executant programa principal del recomender
+2024-06-15 23:38:50,438 | root | INFO | Recomanació per l'usuari: 1
+2024-06-15 23:38:50,439 | root | DEBUG | Recomanació Basada En Contingut per l'usuari: 1
+2024-06-15 23:39:41,730 | root | INFO | Inicialitzant Recomender amb dataset: movielens100k i method: basat en contingut
+2024-06-15 23:39:41,731 | root | INFO | Inicialitzant Recomanacio
+2024-06-15 23:39:41,732 | root | INFO | Inicialitzant ScoreMovies
+2024-06-15 23:41:14,614 | root | INFO | Inicialitzant Recomender amb dataset: movielens100k i method: basat en contingut
+2024-06-15 23:41:14,615 | root | INFO | Inicialitzant Recomanacio
+2024-06-15 23:41:14,616 | root | INFO | Inicialitzant ScoreMovies
+2024-06-15 23:41:16,739 | root | INFO | Carregant dades de valoracions
+2024-06-15 23:41:18,814 | root | INFO | Executant programa principal del recomender
+2024-06-15 23:41:22,531 | root | INFO | Recomanació per l'usuari: 1
+2024-06-15 23:41:22,531 | root | DEBUG | Recomanació Basada En Contingut per l'usuari: 1
+2024-06-15 23:43:09,117 | root | INFO | Inicialitzant Recomender amb dataset: movielens100k i method: basat en contingut
+2024-06-15 23:43:09,118 | root | INFO | Inicialitzant Recomanacio
+2024-06-15 23:43:09,119 | root | INFO | Inicialitzant ScoreMovies
+2024-06-15 23:43:11,242 | root | INFO | Carregant dades de valoracions
+2024-06-15 23:43:13,477 | root | INFO | Executant programa principal del recomender
+2024-06-15 23:43:15,815 | root | INFO | Recomanació per l'usuari: 1
+2024-06-15 23:43:15,815 | root | DEBUG | Recomanació Basada En Contingut per l'usuari: 1
+2024-06-15 23:43:16,389 | root | DEBUG | Creant item Movie amb id: 914
+2024-06-15 23:43:16,389 | root | DEBUG | Inicialitzant Item amb ID: 914
+2024-06-15 23:43:16,390 | root | DEBUG | Creant item Movie amb id: 1272
+2024-06-15 23:43:16,390 | root | DEBUG | Inicialitzant Item amb ID: 1272
+2024-06-15 23:43:16,392 | root | DEBUG | Creant item Movie amb id: 5746
+2024-06-15 23:43:16,392 | root | DEBUG | Inicialitzant Item amb ID: 5746
+2024-06-15 23:43:16,395 | root | DEBUG | Creant item Movie amb id: 5764
+2024-06-15 23:43:16,395 | root | DEBUG | Inicialitzant Item amb ID: 5764
+2024-06-15 23:43:16,399 | root | DEBUG | Creant item Movie amb id: 215
+2024-06-15 23:43:16,399 | root | DEBUG | Inicialitzant Item amb ID: 215
+2024-06-15 23:43:28,050 | root | INFO | Sortint...
+2024-06-15 23:43:46,808 | root | INFO | Inicialitzant Recomender amb dataset: animedata i method: basat en contingut
+2024-06-15 23:43:46,809 | root | INFO | Inicialitzant Recomanacio
+2024-06-15 23:43:46,809 | root | INFO | Inicialitzant ScoreAnimes
+2024-06-15 23:43:47,430 | root | INFO | Carregant dades de valoracions
+2024-06-15 23:43:48,071 | root | INFO | Executant programa principal del recomender
+2024-06-15 23:43:50,794 | root | INFO | Recomanació per l'usuari: 1
+2024-06-15 23:43:50,795 | root | DEBUG | Recomanació Basada En Contingut per l'usuari: 1
+2024-06-15 23:43:51,410 | root | DEBUG | Creant item Movie amb id: 11617
+2024-06-15 23:43:51,410 | root | DEBUG | Inicialitzant Item amb ID: 11617
+2024-06-15 23:43:51,412 | root | DEBUG | Creant item Movie amb id: 15451
+2024-06-15 23:43:51,412 | root | DEBUG | Inicialitzant Item amb ID: 15451
+2024-06-15 23:43:51,414 | root | DEBUG | Creant item Movie amb id: 16508
+2024-06-15 23:43:51,414 | root | DEBUG | Inicialitzant Item amb ID: 16508
+2024-06-15 23:43:51,422 | root | DEBUG | Creant item Movie amb id: 20
+2024-06-15 23:43:51,422 | root | DEBUG | Inicialitzant Item amb ID: 20
+2024-06-15 23:43:51,425 | root | DEBUG | Creant item Movie amb id: 24
+2024-06-15 23:43:51,426 | root | DEBUG | Inicialitzant Item amb ID: 24

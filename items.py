@@ -21,7 +21,7 @@ class Item(metaclass=ABCMeta):
 
     Methods
     -------
-    __init__(ID=0, nomFitxerValoracions="", nomFitxerTitols="")
+    __init__(ID=0, nomFitxerTitols="")
         Inicialitza un nou objecte Item.
     _carrega_dades(nomFitxerTitols)
         Carrega les dades de l'ítem des del fitxer.
@@ -190,6 +190,56 @@ class Movie(Item):
         -------
         str
             Representació en cadena de la pel·lícula.
+        """
+        if self._titol:
+            resposta = super().__str__()
+            resposta += f'GENERES: {" | ".join(self._generes)}'
+            return resposta
+        else:
+            return None
+
+
+class Anime(Item):
+    """
+    Classe per a ítems de tipus anime.
+
+    Attributes
+    ----------
+    _generes : list
+        Llista de gèneres de l'anime.
+
+    Methods
+    -------
+    __init__(ID=0, nomFitxerTitols="")
+        Inicialitza un nou objecte Anime.
+    __str__()
+        Retorna una representació en cadena de l'anime.
+    """
+
+    _generes: list = []
+
+    def __init__(self, ID=0, nomFitxerTitols=""):
+        """
+        Inicialitza un nou objecte Anime.
+
+        Parameters
+        ----------
+        ID : str
+            Identificador de l'anime.
+        nomFitxerTitols : str
+            Nom del fitxer de títols.
+        """
+        super().__init__(ID, nomFitxerTitols)
+        self._generes = self._extra.split(",")
+
+    def __str__(self):
+        """
+        Retorna una representació en cadena de l'anime.
+
+        Returns
+        -------
+        str
+            Representació en cadena de l'anime.
         """
         if self._titol:
             resposta = super().__str__()
