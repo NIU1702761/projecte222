@@ -87,12 +87,14 @@ class Recomender(metaclass=ABCMeta):
                         
                         logging.info(f"MAE: {mae}")
                         logging.info(f"RMSE: {rmse}")
-                        print('MAE:',mae)
-                        print('RMSE:',rmse)
+                        #print('MAE:',mae)
+                        #print('RMSE:',rmse)
                         #print(np.count_nonzero(valoracions_usuari))
                     else:
                         logging.info("Necessitem més valoracions de l'usuari {id_usuari} per poder-lo avaluar")
-                        print(f"Necessitem més valoracions de l'usuari {id_usuari}.")
+                        #print(f"Necessitem més valoracions de l'usuari {id_usuari}.")
+                        self._recomanacio.usuari_a_avaluar()
+                        
                     #    print('necessitem més valoracions.')
                     
                     #print('MAE:',mae)
@@ -241,7 +243,6 @@ class RecomenderBooks(Recomender):
         return Book(id_item, fitxer_items)
 
 
-    
 
 class RecomenderAnimes(Recomender):
     """

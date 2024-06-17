@@ -248,6 +248,25 @@ class Score(metaclass=ABCMeta):
                 else:
                     break
         return item_features
+    
+    
+    def usuari_a_avaluar(self):
+        """
+        Retorna el primer usuari amb almenys una valoració feta per poder utilitzar l'avaluador.'
+
+        Returns
+        -------
+        str
+            Id del primer usuari amb el que podem utilitzar la opció avaluació.
+        """
+        ha_puntuat = False
+        i = 0
+        while not ha_puntuat:
+            if np.count_nonzero(self._mat[i,:]) != 0:
+                usuari_rata = list(self._dic_usuaris.keys())[i]
+                ha_puntuat = True
+            i += 1
+        return logging.info(f"Primer usuari amb alguna puntuació: {usuari_rata}")
 
 class ScoreMovies(Score):
     """
@@ -306,6 +325,9 @@ class ScoreMovies(Score):
                 id_usuari, id_item, score, _ = line.strip().split(',')
                 score = float(score)
                 self._mat[self._dic_usuaris[id_usuari], self._dic_items[id_item]] = score 
+        
+        logging.info(f"Usuaris carregats: {self._n_usuaris}")
+        logging.info(f"Items carregats: {self._n_items}")
     
 
 
@@ -389,18 +411,10 @@ class ScoreBooks(Score):
                     except ValueError:
                         pass
                 else:
-                   #logging.info(self._mat[7,1])
-                   #logging.info(self._ll_usuaris[7])
-                   #logging.info(self._ll_items[1])
                    break
-        ha_puntuat = False
-        i = 0
-        while not ha_puntuat:
-            if np.count_nonzero(self._mat[i,:]) != 0:
-                usuari_rata = list(self._dic_usuaris.keys())[i]
-                ha_puntuat = True
-            i += 1
-        logging.info(f"Primer usuari amb alguna puntuació: {usuari_rata}")
+        logging.info(f"Usuaris carregats: {self._n_usuaris}")
+        logging.info(f"Items carregats: {self._n_items}")
+    
         
                
      
@@ -460,4 +474,6 @@ class ScoreAnimes(Score):
             for line in f:
                 id_usuari, id_item, score = line.strip().split(',')
                 score = 0 if float(score) == -1 else float(score)
-                self._mat[self._dic_usuaris[id_usuari], self._dic_items[id_item]] = score 
+                self._mat[self._dic_usuaris[id_usuari], self._dic_items[id_item]] = score
+        logging.info(f"Usuaris carregats: {self._n_usuaris}")
+        logging.info(f"Items carregats: {self._n_items}")

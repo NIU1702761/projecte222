@@ -87,6 +87,9 @@ class Recomanacio(metaclass=ABCMeta):
         """
         
         return self._score.vector_puntuacions(id_usuari)
+    
+    def usuari_a_avaluar(self):
+        pass
 
 
 class RecomanacioSimple(Recomanacio):
@@ -209,14 +212,14 @@ class RecomanacioColaborativa(Recomanacio):
             return None, None
         else:
             logging.debug(f"Recomanació Colaborativa per l'usuari: {id_usuari}")
-            logging.info(f"Trobant similituds amb altres usuaris.")
+            logging.info(f"Trobant similituds amb altres usuaris. Aquest recomanador pot anar més lent per alguns casos")
             similituds=[]
             for usuari in self._score.ll_usuaris():
                 s=self._score.similitud(id_usuari,usuari)
                 similituds.append((usuari,s))
             k = 5
             similituds.sort(key=lambda x: x[1], reverse=True)
-            k_similituds = similituds[:k+2][1:]
+            k_similituds = similituds[:k+1][1:]
             usuaris_similars = [x[0] for x in k_similituds]
             
             puntuacions = np.zeros(len(ll_items))
@@ -230,7 +233,10 @@ class RecomanacioColaborativa(Recomanacio):
                     mitjana=self._score.avg_usu(usuari)
                     numerador += k_similituds[i][1]*(self._score._mat[self._score.ll_usuaris().index(usuari)][self._score.ll_items().index(item)]-mitjana)
                     denominador+=k_similituds[i][1]
-                puntuacio=numerador/denominador
+                try:
+                    puntuacio=float(numerador)/denominador
+                except ZeroDivisionError:
+                    puntuacio = 0
                 puntuacions[ll_items.index(item)] = mitjana_usu + puntuacio
             
             copia_puntuacions = puntuacions.copy()
@@ -245,6 +251,9 @@ class RecomanacioColaborativa(Recomanacio):
                 ll_items.pop(index_maxim)
             return puntuacions, items
         
+    def usuari_a_avaluar(self):
+        self._score.usuari_a_avaluar()
+    
 
 
 class RecomanacioBasadaEnContingut(Recomanacio):
