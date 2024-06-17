@@ -79,13 +79,22 @@ class Recomender(metaclass=ABCMeta):
                 
                 if prediccions is not None:
                     valoracions_usuari = self._recomanacio.valoracions_usuari(id_usuari)
-                    c = valoracions_usuari != 0.0
+                    if np.count_nonzero(valoracions_usuari) != 0:
+                        c = valoracions_usuari != 0.0
+                        
+                        mae = (np.sum(abs(prediccions[c] - valoracions_usuari[c]))) / np.count_nonzero(valoracions_usuari)
+                        rmse = math.sqrt((np.sum((valoracions_usuari[c] - prediccions[c])**2))/np.count_nonzero(valoracions_usuari))
+                        
+                        logging.info(f"MAE: {mae}")
+                        logging.info(f"RMSE: {rmse}")
+                        print('MAE:',mae)
+                        print('RMSE:',rmse)
+                        #print(np.count_nonzero(valoracions_usuari))
+                    else:
+                        logging.info("Necessitem més valoracions de l'usuari {id_usuari} per poder-lo avaluar")
+                        print(f"Necessitem més valoracions de l'usuari {id_usuari}.")
+                    #    print('necessitem més valoracions.')
                     
-                    mae = (np.sum(abs(prediccions[c] - valoracions_usuari[c]))) / np.count_nonzero(valoracions_usuari)
-                    rmse = math.sqrt((np.sum((valoracions_usuari[c] - prediccions[c])**2))/np.count_nonzero(valoracions_usuari))
-                    
-                    logging.info(f"MAE: {mae}")
-                    logging.info(f"RMSE: {rmse}")
                     #print('MAE:',mae)
                     #print('RMSE:',rmse)
             else:
@@ -230,6 +239,8 @@ class RecomenderBooks(Recomender):
         """
         logging.debug(f"Creant item Book amb id: {id_item}")
         return Book(id_item, fitxer_items)
+
+
     
 
 class RecomenderAnimes(Recomender):
@@ -287,5 +298,5 @@ class RecomenderAnimes(Recomender):
             Objecte anime.
         """
         
-        logging.debug(f"Creant item Movie amb id: {id_item}")
+        logging.debug(f"Creant item Anime amb id: {id_item}")
         return Anime(id_item, fitxer_items)

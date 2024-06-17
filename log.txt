@@ -360,3 +360,289 @@
 2024-06-15 23:43:51,422 | root | DEBUG | Inicialitzant Item amb ID: 20
 2024-06-15 23:43:51,425 | root | DEBUG | Creant item Movie amb id: 24
 2024-06-15 23:43:51,426 | root | DEBUG | Inicialitzant Item amb ID: 24
+2024-06-17 06:59:55,557 | root | INFO | Inicialitzant Recomender amb dataset: animedata i method: basat en contingut
+2024-06-17 06:59:55,557 | root | INFO | Inicialitzant Recomanacio
+2024-06-17 06:59:55,557 | root | INFO | Inicialitzant ScoreAnimes
+2024-06-17 06:59:56,096 | root | INFO | Carregant dades de valoracions
+2024-06-17 06:59:56,577 | root | INFO | Executant programa principal del recomender
+2024-06-17 07:00:00,092 | root | INFO | Recomanació per l'usuari: 1
+2024-06-17 07:00:00,093 | root | DEBUG | Recomanació Basada En Contingut per l'usuari: 1
+2024-06-17 07:00:00,569 | root | DEBUG | Creant item Movie amb id: 11617
+2024-06-17 07:00:00,569 | root | DEBUG | Inicialitzant Item amb ID: 11617
+2024-06-17 07:00:00,570 | root | DEBUG | Creant item Movie amb id: 15451
+2024-06-17 07:00:00,570 | root | DEBUG | Inicialitzant Item amb ID: 15451
+2024-06-17 07:00:00,570 | root | DEBUG | Creant item Movie amb id: 16508
+2024-06-17 07:00:00,570 | root | DEBUG | Inicialitzant Item amb ID: 16508
+2024-06-17 07:00:00,574 | root | DEBUG | Creant item Movie amb id: 20
+2024-06-17 07:00:00,575 | root | DEBUG | Inicialitzant Item amb ID: 20
+2024-06-17 07:00:00,575 | root | DEBUG | Creant item Movie amb id: 24
+2024-06-17 07:00:00,575 | root | DEBUG | Inicialitzant Item amb ID: 24
+2024-06-17 07:00:02,709 | root | ERROR | ERROR: Acció no disponible.
+2024-06-17 07:00:04,117 | root | INFO | Recomanació per l'usuari: 1
+2024-06-17 07:00:04,118 | root | DEBUG | Recomanació Basada En Contingut per l'usuari: 1
+2024-06-17 07:00:21,776 | root | INFO | Inicialitzant Recomender amb dataset: animedata i method: basat en contingut
+2024-06-17 07:00:21,777 | root | INFO | Inicialitzant Recomanacio
+2024-06-17 07:00:21,777 | root | INFO | Inicialitzant ScoreAnimes
+2024-06-17 07:00:22,195 | root | INFO | Carregant dades de valoracions
+2024-06-17 07:00:22,632 | root | INFO | Executant programa principal del recomender
+2024-06-17 07:00:24,889 | root | INFO | Recomanació per l'usuari: 2
+2024-06-17 07:00:24,889 | root | DEBUG | Recomanació Basada En Contingut per l'usuari: 2
+2024-06-17 07:00:25,526 | root | DEBUG | Creant item Movie amb id: 20
+2024-06-17 07:00:25,526 | root | DEBUG | Inicialitzant Item amb ID: 20
+2024-06-17 07:00:25,526 | root | DEBUG | Creant item Movie amb id: 24
+2024-06-17 07:00:25,527 | root | DEBUG | Inicialitzant Item amb ID: 24
+2024-06-17 07:00:25,527 | root | DEBUG | Creant item Movie amb id: 79
+2024-06-17 07:00:25,527 | root | DEBUG | Inicialitzant Item amb ID: 79
+2024-06-17 07:00:25,529 | root | DEBUG | Creant item Movie amb id: 226
+2024-06-17 07:00:25,529 | root | DEBUG | Inicialitzant Item amb ID: 226
+2024-06-17 07:00:25,530 | root | DEBUG | Creant item Movie amb id: 241
+2024-06-17 07:00:25,530 | root | DEBUG | Inicialitzant Item amb ID: 241
+2024-06-17 07:00:29,933 | root | INFO | Avaluació per l'usuari: 1
+2024-06-17 07:00:29,934 | root | DEBUG | Recomanació Basada En Contingut per l'usuari: 1
+2024-06-17 07:00:45,484 | root | INFO | Inicialitzant Recomender amb dataset: animedata i method: basat en contingut
+2024-06-17 07:00:45,484 | root | INFO | Inicialitzant Recomanacio
+2024-06-17 07:00:45,484 | root | INFO | Inicialitzant ScoreAnimes
+2024-06-17 07:00:45,899 | root | INFO | Carregant dades de valoracions
+2024-06-17 07:00:46,336 | root | INFO | Executant programa principal del recomender
+2024-06-17 07:00:48,726 | root | INFO | Recomanació per l'usuari: 2
+2024-06-17 07:00:48,727 | root | DEBUG | Recomanació Basada En Contingut per l'usuari: 2
+2024-06-17 07:00:49,232 | root | DEBUG | Creant item Movie amb id: 20
+2024-06-17 07:00:49,232 | root | DEBUG | Inicialitzant Item amb ID: 20
+2024-06-17 07:00:49,233 | root | DEBUG | Creant item Movie amb id: 24
+2024-06-17 07:00:49,233 | root | DEBUG | Inicialitzant Item amb ID: 24
+2024-06-17 07:00:49,234 | root | DEBUG | Creant item Movie amb id: 79
+2024-06-17 07:00:49,235 | root | DEBUG | Inicialitzant Item amb ID: 79
+2024-06-17 07:00:49,239 | root | DEBUG | Creant item Movie amb id: 226
+2024-06-17 07:00:49,239 | root | DEBUG | Inicialitzant Item amb ID: 226
+2024-06-17 07:00:49,240 | root | DEBUG | Creant item Movie amb id: 241
+2024-06-17 07:00:49,240 | root | DEBUG | Inicialitzant Item amb ID: 241
+2024-06-17 07:00:51,565 | root | INFO | Avaluació per l'usuari: 1
+2024-06-17 07:00:51,565 | root | DEBUG | Recomanació Basada En Contingut per l'usuari: 1
+2024-06-17 07:02:12,391 | root | INFO | Inicialitzant Recomender amb dataset: animedata i method: basat en contingut
+2024-06-17 07:02:12,391 | root | INFO | Inicialitzant Recomanacio
+2024-06-17 07:02:12,391 | root | INFO | Inicialitzant ScoreAnimes
+2024-06-17 07:02:12,813 | root | INFO | Carregant dades de valoracions
+2024-06-17 07:02:13,252 | root | INFO | Executant programa principal del recomender
+2024-06-17 07:02:15,299 | root | INFO | Recomanació per l'usuari: 1
+2024-06-17 07:02:15,300 | root | DEBUG | Recomanació Basada En Contingut per l'usuari: 1
+2024-06-17 07:02:15,791 | root | DEBUG | Creant item Movie amb id: 11617
+2024-06-17 07:02:15,791 | root | DEBUG | Inicialitzant Item amb ID: 11617
+2024-06-17 07:02:15,792 | root | DEBUG | Creant item Movie amb id: 15451
+2024-06-17 07:02:15,792 | root | DEBUG | Inicialitzant Item amb ID: 15451
+2024-06-17 07:02:15,793 | root | DEBUG | Creant item Movie amb id: 16508
+2024-06-17 07:02:15,793 | root | DEBUG | Inicialitzant Item amb ID: 16508
+2024-06-17 07:02:15,800 | root | DEBUG | Creant item Movie amb id: 20
+2024-06-17 07:02:15,800 | root | DEBUG | Inicialitzant Item amb ID: 20
+2024-06-17 07:02:15,800 | root | DEBUG | Creant item Movie amb id: 24
+2024-06-17 07:02:15,800 | root | DEBUG | Inicialitzant Item amb ID: 24
+2024-06-17 07:02:34,518 | root | INFO | Sortint...
+2024-06-17 07:07:33,570 | root | INFO | Inicialitzant Recomender amb dataset: animedata i method: basat en contingut
+2024-06-17 07:07:33,570 | root | INFO | Inicialitzant Recomanacio
+2024-06-17 07:07:33,570 | root | INFO | Inicialitzant ScoreAnimes
+2024-06-17 07:07:33,991 | root | INFO | Carregant dades de valoracions
+2024-06-17 07:07:34,430 | root | INFO | Executant programa principal del recomender
+2024-06-17 07:09:01,777 | root | INFO | Dataset: movielens100k
+2024-06-17 07:09:01,777 | root | INFO | Method: simple
+2024-06-17 07:09:01,777 | root | INFO | Pickles no existeixen -> Creant recomender per a movielens100k amb el mètode simple
+2024-06-17 07:09:01,778 | root | INFO | Inicialitzant Recomender amb dataset: movielens100k i method: simple
+2024-06-17 07:09:01,778 | root | INFO | Inicialitzant Recomanacio
+2024-06-17 07:09:01,778 | root | INFO | Inicialitzant ScoreMovies
+2024-06-17 07:09:03,218 | root | INFO | Carregant dades de valoracions
+2024-06-17 07:09:04,725 | root | INFO | Guardant Pickles
+2024-06-17 07:09:04,729 | root | INFO | Executant programa principal del recomender
+2024-06-17 07:09:07,033 | root | INFO | Recomanació per l'usuari: 1
+2024-06-17 07:09:07,034 | root | DEBUG | Recomanació Simple per l'usuari: 1
+2024-06-17 07:09:10,531 | root | INFO | Màxim: 4.625773932141694
+2024-06-17 07:09:10,531 | root | INFO | Màxim: 4.584717343650018
+2024-06-17 07:09:10,532 | root | INFO | Màxim: 4.47922811190418
+2024-06-17 07:09:10,532 | root | INFO | Màxim: 4.467181227550023
+2024-06-17 07:09:10,532 | root | INFO | Màxim: 4.459758307141694
+2024-06-17 07:09:10,532 | root | DEBUG | Creant item Movie amb id: 6460
+2024-06-17 07:09:10,532 | root | DEBUG | Inicialitzant Item amb ID: 6460
+2024-06-17 07:09:10,535 | root | DEBUG | Creant item Movie amb id: 177593
+2024-06-17 07:09:10,535 | root | DEBUG | Inicialitzant Item amb ID: 177593
+2024-06-17 07:09:10,540 | root | DEBUG | Creant item Movie amb id: 1041
+2024-06-17 07:09:10,540 | root | DEBUG | Inicialitzant Item amb ID: 1041
+2024-06-17 07:09:10,540 | root | DEBUG | Creant item Movie amb id: 2239
+2024-06-17 07:09:10,540 | root | DEBUG | Inicialitzant Item amb ID: 2239
+2024-06-17 07:09:10,541 | root | DEBUG | Creant item Movie amb id: 31364
+2024-06-17 07:09:10,541 | root | DEBUG | Inicialitzant Item amb ID: 31364
+2024-06-17 07:09:23,611 | root | INFO | Avaluació per l'usuari: 1
+2024-06-17 07:09:23,612 | root | DEBUG | Recomanació Simple per l'usuari: 1
+2024-06-17 07:09:25,882 | root | INFO | Màxim: 4.455674515669799
+2024-06-17 07:09:25,882 | root | INFO | Màxim: 4.435561808099713
+2024-06-17 07:09:25,882 | root | INFO | Màxim: 4.422469224629148
+2024-06-17 07:09:25,882 | root | INFO | Màxim: 4.388078954361384
+2024-06-17 07:09:25,882 | root | INFO | Màxim: 4.367636143486272
+2024-06-17 17:54:45,148 | root | INFO | Dataset: movielens100k
+2024-06-17 17:54:45,148 | root | INFO | Method: simple
+2024-06-17 17:54:45,148 | root | INFO | Pickles no existeixen -> Creant recomender per a movielens100k amb el mètode simple
+2024-06-17 17:54:45,148 | root | INFO | Inicialitzant Recomender amb dataset: movielens100k i method: simple
+2024-06-17 17:54:45,148 | root | INFO | Inicialitzant Recomanacio
+2024-06-17 17:54:45,148 | root | INFO | Inicialitzant ScoreMovies
+2024-06-17 17:57:48,866 | root | INFO | Dataset: movielens100k
+2024-06-17 17:57:48,866 | root | INFO | Method: simple
+2024-06-17 17:57:48,866 | root | INFO | Pickles no existeixen -> Creant recomender per a movielens100k amb el mètode simple
+2024-06-17 17:57:48,866 | root | INFO | Inicialitzant Recomender amb dataset: movielens100k i method: simple
+2024-06-17 17:57:48,866 | root | INFO | Inicialitzant Recomanacio
+2024-06-17 17:57:48,866 | root | INFO | Inicialitzant ScoreMovies
+2024-06-17 17:57:48,905 | root | INFO | Carregant dades de valoracions
+2024-06-17 17:57:48,948 | root | INFO | Guardant Pickles
+2024-06-17 17:57:48,955 | root | INFO | Executant programa principal del recomender
+2024-06-17 17:57:52,129 | root | INFO | Recomanació per l'usuari: 1
+2024-06-17 17:57:52,130 | root | DEBUG | Recomanació Simple per l'usuari: 1
+2024-06-17 17:57:53,362 | root | DEBUG | Creant item Movie amb id: 6460
+2024-06-17 17:57:53,362 | root | DEBUG | Inicialitzant Item amb ID: 6460
+2024-06-17 17:57:53,365 | root | DEBUG | Creant item Movie amb id: 177593
+2024-06-17 17:57:53,366 | root | DEBUG | Inicialitzant Item amb ID: 177593
+2024-06-17 17:57:53,370 | root | DEBUG | Creant item Movie amb id: 1041
+2024-06-17 17:57:53,370 | root | DEBUG | Inicialitzant Item amb ID: 1041
+2024-06-17 17:57:53,370 | root | DEBUG | Creant item Movie amb id: 2239
+2024-06-17 17:57:53,370 | root | DEBUG | Inicialitzant Item amb ID: 2239
+2024-06-17 17:57:53,371 | root | DEBUG | Creant item Movie amb id: 31364
+2024-06-17 17:57:53,371 | root | DEBUG | Inicialitzant Item amb ID: 31364
+2024-06-17 17:57:55,491 | root | INFO | Avaluació per l'usuari: 1
+2024-06-17 17:57:55,492 | root | DEBUG | Recomanació Simple per l'usuari: 1
+2024-06-17 17:57:56,994 | root | INFO | MAE: 0.9561199863031132
+2024-06-17 17:57:56,995 | root | INFO | RMSE: 1.0926738682213508
+2024-06-17 17:57:59,200 | root | INFO | Sortint...
+2024-06-17 17:58:04,957 | root | INFO | Dataset: movielens100k
+2024-06-17 17:58:04,957 | root | INFO | Method: colaboratiu
+2024-06-17 17:58:04,957 | root | INFO | Pickles no existeixen -> Creant recomender per a movielens100k amb el mètode colaboratiu
+2024-06-17 17:58:04,957 | root | INFO | Inicialitzant Recomender amb dataset: movielens100k i method: colaboratiu
+2024-06-17 17:58:04,957 | root | INFO | Inicialitzant Recomanacio
+2024-06-17 17:58:04,957 | root | INFO | Inicialitzant ScoreMovies
+2024-06-17 17:58:05,005 | root | INFO | Carregant dades de valoracions
+2024-06-17 17:58:05,049 | root | INFO | Guardant Pickles
+2024-06-17 17:58:05,054 | root | INFO | Executant programa principal del recomender
+2024-06-17 17:58:09,494 | root | INFO | Recomanació per l'usuari: 1
+2024-06-17 17:58:09,495 | root | DEBUG | Recomanació Colaborativa per l'usuari: 1
+2024-06-17 17:58:09,495 | root | INFO | Trobant similituds amb altres usuaris; aquest procés pot tardar uns 40 segons.
+2024-06-17 17:58:16,108 | root | DEBUG | Creant item Movie amb id: 58559
+2024-06-17 17:58:16,109 | root | DEBUG | Inicialitzant Item amb ID: 58559
+2024-06-17 17:58:16,112 | root | DEBUG | Creant item Movie amb id: 5816
+2024-06-17 17:58:16,112 | root | DEBUG | Inicialitzant Item amb ID: 5816
+2024-06-17 17:58:16,114 | root | DEBUG | Creant item Movie amb id: 89745
+2024-06-17 17:58:16,114 | root | DEBUG | Inicialitzant Item amb ID: 89745
+2024-06-17 17:58:16,117 | root | DEBUG | Creant item Movie amb id: 109487
+2024-06-17 17:58:16,117 | root | DEBUG | Inicialitzant Item amb ID: 109487
+2024-06-17 17:58:16,120 | root | DEBUG | Creant item Movie amb id: 33794
+2024-06-17 17:58:16,121 | root | DEBUG | Inicialitzant Item amb ID: 33794
+2024-06-17 17:58:21,991 | root | INFO | Avaluació per l'usuari: 5
+2024-06-17 17:58:21,992 | root | DEBUG | Recomanació Colaborativa per l'usuari: 5
+2024-06-17 17:58:21,992 | root | INFO | Trobant similituds amb altres usuaris; aquest procés pot tardar uns 40 segons.
+2024-06-17 17:58:28,468 | root | INFO | MAE: 2.8496389678030303
+2024-06-17 17:58:28,468 | root | INFO | RMSE: 2.966286628014833
+2024-06-17 17:58:30,853 | root | INFO | Sortint...
+2024-06-17 17:58:41,817 | root | INFO | Dataset: movielens100k
+2024-06-17 17:58:41,817 | root | INFO | Method: basat en contingut
+2024-06-17 17:58:41,817 | root | INFO | Pickles no existeixen -> Creant recomender per a movielens100k amb el mètode basat en contingut
+2024-06-17 17:58:41,817 | root | INFO | Inicialitzant Recomender amb dataset: movielens100k i method: basat en contingut
+2024-06-17 17:58:41,817 | root | INFO | Inicialitzant Recomanacio
+2024-06-17 17:58:41,817 | root | INFO | Inicialitzant ScoreMovies
+2024-06-17 17:58:41,856 | root | INFO | Carregant dades de valoracions
+2024-06-17 17:58:41,899 | root | INFO | Guardant Pickles
+2024-06-17 17:58:41,904 | root | INFO | Executant programa principal del recomender
+2024-06-17 17:58:43,990 | root | INFO | Recomanació per l'usuari: 1
+2024-06-17 17:58:43,991 | root | DEBUG | Recomanació Basada En Contingut per l'usuari: 1
+2024-06-17 17:58:44,078 | root | DEBUG | Creant item Movie amb id: 6874
+2024-06-17 17:58:44,078 | root | DEBUG | Inicialitzant Item amb ID: 6874
+2024-06-17 17:58:44,081 | root | DEBUG | Creant item Movie amb id: 914
+2024-06-17 17:58:44,081 | root | DEBUG | Inicialitzant Item amb ID: 914
+2024-06-17 17:58:44,082 | root | DEBUG | Creant item Movie amb id: 1272
+2024-06-17 17:58:44,082 | root | DEBUG | Inicialitzant Item amb ID: 1272
+2024-06-17 17:58:44,082 | root | DEBUG | Creant item Movie amb id: 5746
+2024-06-17 17:58:44,082 | root | DEBUG | Inicialitzant Item amb ID: 5746
+2024-06-17 17:58:44,087 | root | DEBUG | Creant item Movie amb id: 5764
+2024-06-17 17:58:44,087 | root | DEBUG | Inicialitzant Item amb ID: 5764
+2024-06-17 17:58:46,867 | root | INFO | Avaluació per l'usuari: 3
+2024-06-17 17:58:46,868 | root | DEBUG | Recomanació Basada En Contingut per l'usuari: 3
+2024-06-17 17:58:46,958 | root | INFO | MAE: 1.950792627921423
+2024-06-17 17:58:46,958 | root | INFO | RMSE: 2.3723186598546886
+2024-06-17 17:58:48,915 | root | INFO | Sortint...
+2024-06-17 18:00:13,809 | root | INFO | Dataset: books
+2024-06-17 18:00:13,809 | root | INFO | Method: simple
+2024-06-17 18:00:13,809 | root | INFO | Pickles no existeixen -> Creant recomender per a books amb el mètode simple
+2024-06-17 18:00:13,809 | root | INFO | Inicialitzant Recomender amb dataset: books i method: simple
+2024-06-17 18:00:13,809 | root | INFO | Inicialitzant Recomanacio
+2024-06-17 18:00:13,809 | root | INFO | Inicialitzant ScoreBooks
+2024-06-17 18:00:13,822 | root | INFO | Carregant dades de valoracions
+2024-06-17 18:00:13,998 | root | INFO | Primer usuari amb alguna puntuació: 8
+2024-06-17 18:00:13,998 | root | INFO | Guardant Pickles
+2024-06-17 18:00:14,118 | root | INFO | Executant programa principal del recomender
+2024-06-17 18:00:15,973 | root | INFO | Recomanació per l'usuari: 1
+2024-06-17 18:00:15,974 | root | DEBUG | Recomanació Simple per l'usuari: 1
+2024-06-17 18:00:18,907 | root | DEBUG | Creant item Book amb id: 0446310786
+2024-06-17 18:00:18,907 | root | DEBUG | Inicialitzant Item amb ID: 0446310786
+2024-06-17 18:00:19,259 | root | DEBUG | Creant item Book amb id: 0440221471
+2024-06-17 18:00:19,259 | root | DEBUG | Inicialitzant Item amb ID: 0440221471
+2024-06-17 18:00:19,611 | root | DEBUG | Creant item Book amb id: 0765342987
+2024-06-17 18:00:19,611 | root | DEBUG | Inicialitzant Item amb ID: 0765342987
+2024-06-17 18:00:19,963 | root | DEBUG | Creant item Book amb id: 0451456734
+2024-06-17 18:00:19,963 | root | DEBUG | Inicialitzant Item amb ID: 0451456734
+2024-06-17 18:00:20,315 | root | DEBUG | Creant item Book amb id: 0440998050
+2024-06-17 18:00:20,315 | root | DEBUG | Inicialitzant Item amb ID: 0440998050
+2024-06-17 18:00:23,985 | root | INFO | Avaluació per l'usuari: 5
+2024-06-17 18:00:23,986 | root | DEBUG | Recomanació Simple per l'usuari: 5
+2024-06-17 18:00:28,777 | root | INFO | Necessitem més valoracions de l'usuari {id_usuari} per poder-lo avaluar
+2024-06-17 18:00:43,258 | root | INFO | Avaluació per l'usuari: 8
+2024-06-17 18:00:43,260 | root | DEBUG | Recomanació Simple per l'usuari: 8
+2024-06-17 18:00:46,638 | root | INFO | MAE: 1.7459821428571427
+2024-06-17 18:00:46,638 | root | INFO | RMSE: 1.840664412626787
+2024-06-17 18:00:51,824 | root | INFO | Sortint...
+2024-06-17 18:01:01,228 | root | INFO | Dataset: books
+2024-06-17 18:01:01,228 | root | INFO | Method: colaboratiu
+2024-06-17 18:01:01,228 | root | INFO | Pickles no existeixen -> Creant recomender per a books amb el mètode colaboratiu
+2024-06-17 18:01:01,228 | root | INFO | Inicialitzant Recomender amb dataset: books i method: colaboratiu
+2024-06-17 18:01:01,228 | root | INFO | Inicialitzant Recomanacio
+2024-06-17 18:01:01,228 | root | INFO | Inicialitzant ScoreBooks
+2024-06-17 18:01:01,241 | root | INFO | Carregant dades de valoracions
+2024-06-17 18:01:01,412 | root | INFO | Primer usuari amb alguna puntuació: 8
+2024-06-17 18:01:01,412 | root | INFO | Guardant Pickles
+2024-06-17 18:01:01,513 | root | INFO | Executant programa principal del recomender
+2024-06-17 18:01:03,522 | root | INFO | Recomanació per l'usuari: 2
+2024-06-17 18:01:03,523 | root | DEBUG | Recomanació Colaborativa per l'usuari: 2
+2024-06-17 18:01:03,523 | root | INFO | Trobant similituds amb altres usuaris.
+2024-06-17 18:02:01,535 | root | DEBUG | Creant item Book amb id: 0195153448
+2024-06-17 18:02:01,536 | root | DEBUG | Inicialitzant Item amb ID: 0195153448
+2024-06-17 18:02:01,901 | root | DEBUG | Creant item Book amb id: 0002005018
+2024-06-17 18:02:01,901 | root | DEBUG | Inicialitzant Item amb ID: 0002005018
+2024-06-17 18:02:02,267 | root | DEBUG | Creant item Book amb id: 0060973129
+2024-06-17 18:02:02,267 | root | DEBUG | Inicialitzant Item amb ID: 0060973129
+2024-06-17 18:02:02,621 | root | DEBUG | Creant item Book amb id: 0374157065
+2024-06-17 18:02:02,621 | root | DEBUG | Inicialitzant Item amb ID: 0374157065
+2024-06-17 18:02:02,976 | root | DEBUG | Creant item Book amb id: 0393045218
+2024-06-17 18:02:02,976 | root | DEBUG | Inicialitzant Item amb ID: 0393045218
+2024-06-17 18:02:09,784 | root | INFO | Avaluació per l'usuari: 8
+2024-06-17 18:02:09,785 | root | DEBUG | Recomanació Colaborativa per l'usuari: 8
+2024-06-17 18:02:09,785 | root | INFO | Trobant similituds amb altres usuaris.
+2024-06-17 18:03:08,282 | root | INFO | MAE: nan
+2024-06-17 18:03:08,283 | root | INFO | RMSE: nan
+2024-06-17 18:03:55,594 | root | INFO | Sortint...
+2024-06-17 18:04:13,335 | root | INFO | Dataset: books
+2024-06-17 18:04:13,335 | root | INFO | Method: basat en contingut
+2024-06-17 18:04:13,335 | root | INFO | Pickles no existeixen -> Creant recomender per a books amb el mètode basat en contingut
+2024-06-17 18:04:13,335 | root | INFO | Inicialitzant Recomender amb dataset: books i method: basat en contingut
+2024-06-17 18:04:13,335 | root | INFO | Inicialitzant Recomanacio
+2024-06-17 18:04:13,335 | root | INFO | Inicialitzant ScoreBooks
+2024-06-17 18:04:13,348 | root | INFO | Carregant dades de valoracions
+2024-06-17 18:04:13,535 | root | INFO | Primer usuari amb alguna puntuació: 8
+2024-06-17 18:04:13,536 | root | INFO | Guardant Pickles
+2024-06-17 18:04:13,659 | root | INFO | Executant programa principal del recomender
+2024-06-17 18:04:18,740 | root | INFO | Recomanació per l'usuari: 1
+2024-06-17 18:04:18,741 | root | DEBUG | Recomanació Basada En Contingut per l'usuari: 1
+2024-06-17 18:04:20,349 | root | DEBUG | Creant item Book amb id: 0195153448
+2024-06-17 18:04:20,349 | root | DEBUG | Inicialitzant Item amb ID: 0195153448
+2024-06-17 18:04:20,716 | root | DEBUG | Creant item Book amb id: 0002005018
+2024-06-17 18:04:20,716 | root | DEBUG | Inicialitzant Item amb ID: 0002005018
+2024-06-17 18:04:21,082 | root | DEBUG | Creant item Book amb id: 0060973129
+2024-06-17 18:04:21,082 | root | DEBUG | Inicialitzant Item amb ID: 0060973129
+2024-06-17 18:04:21,434 | root | DEBUG | Creant item Book amb id: 0374157065
+2024-06-17 18:04:21,434 | root | DEBUG | Inicialitzant Item amb ID: 0374157065
+2024-06-17 18:04:21,783 | root | DEBUG | Creant item Book amb id: 0393045218
+2024-06-17 18:04:21,783 | root | DEBUG | Inicialitzant Item amb ID: 0393045218
+2024-06-17 18:04:27,658 | root | INFO | Avaluació per l'usuari: 8
+2024-06-17 18:04:27,660 | root | DEBUG | Recomanació Basada En Contingut per l'usuari: 8
+2024-06-17 18:04:29,060 | root | INFO | MAE: 3.290647468415599
+2024-06-17 18:04:29,062 | root | INFO | RMSE: 3.337995213754331
+2024-06-17 18:04:31,391 | root | INFO | Sortint...

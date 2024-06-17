@@ -1,47 +1,46 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-import numpy as np
-from typing import List
 from abc import ABCMeta, abstractmethod
-import math
-from scipy.sparse import lil_matrix
-import csv
+from typing import List
+import numpy as np
 import logging
+import math
+import csv
+
 
 class Score(metaclass=ABCMeta):
     
-    _ll_usuaris = list 
-    _ll_items = list
+    _dic_usuaris = dict 
+    _dic_items = dict
     _n_usuaris = int 
     _n_items = int
     _mat = np.array
     
     def __init__(self, fitxer_items,fitxer_valoracions):
-        self._ll_usuaris = []
-        self._ll_items = []
+        self._dic_usuaris = {}
+        self._dic_items = {}
         self._mat = None
     
     def ll_items(self):
         """
-        Retorna el conjunt d'ítems.
-
+        Retorna una llista amb els identificadors dels ítems.
         Returns
         -------
-        set
-            Conjunt d'ítems.
+        list
+            Llista d'ítems.
         """
-        return self._ll_items
+        return list(self._dic_items.keys())
     
     def ll_usuaris(self):
         """
-        Retorna el conjunt d'usuaris.
+        Retorna una llista amb els identicicadors dels usuaris.
 
         Returns
         -------
-        set
-            Conjunt d'usuaris.
+        list
+            Llista d'usuaris.
         """
-        return self._ll_usuaris
+        return list(self._dic_usuaris.keys())
 
     def min_vots(self,min_vots):
         """
@@ -57,11 +56,10 @@ class Score(metaclass=ABCMeta):
         list
             Llista d'ítems amb un mínim de vots.
         """
-        ll = []
-        for index, id_item in enumerate(self._ll_items):
-            if np.count_nonzero(self._mat[:,index]) >= min_vots:
-                ll.append(id_item)
-        return ll
+        vector_num_vots = np.count_nonzero(self._mat, axis=0)
+        uu = np.array(list(self._dic_items.keys()))
+        ll = uu[vector_num_vots >= min_vots]
+        return ll.tolist()
     
     def avg_usu(self, id_usuari) -> float:
         """
@@ -77,9 +75,12 @@ class Score(metaclass=ABCMeta):
         float
             Puntuació mitjana de l'usuari.
         """
-        fila=self._mat[self._ll_usuaris.index(id_usuari),:]
-        sense_zeros = fila[fila > 0]
-        return np.mean(sense_zeros)
+        fila=self._mat[self._dic_usuaris[id_usuari],:]
+        sense_zeros = fila[fila != 0]
+        if np.size(sense_zeros) != 0:
+            return np.mean(sense_zeros)
+        else:
+            return 0
     
     def avg_item(self, id_item) -> float:
         """
@@ -95,10 +96,13 @@ class Score(metaclass=ABCMeta):
         float
             Puntuació mitjana de l'ítem.
         """
-        columna = self._mat[:,self._ll_items.index(id_item)]
-        sense_zeros = columna[columna > 0]
-        return np.mean(sense_zeros)
-    
+        columna = self._mat[:,self._dic_items.get(id_item)]
+        sense_zeros = columna[columna != 0]
+        if len(sense_zeros) == 0:
+            return 0
+        else:
+            return np.mean(sense_zeros)
+        
     def num_vots(self, id_item):
         """
         Retorna el nombre de vots d'un ítem.
@@ -113,7 +117,7 @@ class Score(metaclass=ABCMeta):
         int
             Nombre de vots de l'ítem.
         """
-        columna = self._mat[:, self._ll_items.index(id_item)]
+        columna = self._mat[:, self._dic_items[id_item]]
         return np.count_nonzero(columna)
     
     def avg_global(self, ll_id_items):
@@ -130,10 +134,8 @@ class Score(metaclass=ABCMeta):
         float
             Puntuació mitjana global dels ítems considerats.
         """
-        suma = 0
-        for id_item in ll_id_items:
-            suma += self.avg_item(id_item)
-        return suma/len(ll_id_items)
+        item_indices = [self._dic_items.get(id_item) for id_item in ll_id_items]
+        return np.mean(np.array([self.avg_item(id_item) for id_item in ll_id_items]))
 
     def no_vista(self, id_usuari, id_item):
         """
@@ -151,7 +153,7 @@ class Score(metaclass=ABCMeta):
         bool
             True si l'ítem no ha estat vist per l'usuari, False altrament.
         """
-        if self._mat[self._ll_usuaris.index(id_usuari), self._ll_items.index(str(id_item))] == 0:
+        if self._mat[self._dic_usuaris[id_usuari], self._dic_items[id_item]] == 0:
             return True
         else:
             return False
@@ -175,8 +177,8 @@ class Score(metaclass=ABCMeta):
         numerador=0
         denominador1=0
         denominador2=0
-        index_usu_client=self._ll_usuaris.index(usuari_client)
-        index_usu_sec=self._ll_usuaris.index(usuari_secundari)
+        index_usu_client=self._dic_usuaris[usuari_client]
+        index_usu_sec=self._dic_usuaris[usuari_secundari]
         num_rows, _ = self._mat.shape
         for j in range(num_rows):
             v_usuari_client=self._mat[index_usu_client][j]
@@ -206,7 +208,7 @@ class Score(metaclass=ABCMeta):
         np.ndarray
             Vector de puntuacions de l'usuari.
         """
-        return self._mat[self._ll_usuaris.index(id_user),:]
+        return self._mat[self._dic_usuaris[id_user],:]
     
     def max(self):
         """
@@ -238,10 +240,13 @@ class Score(metaclass=ABCMeta):
             next(f)
             reader = csv.reader(f)
             for line in reader:
-                generes = line[-1]
-                id_item = line[0]
-                if id_item in self._ll_items:
-                    item_features.append(generes)
+                if len(item_features) < 50000:
+                    generes = line[-1]
+                    id_item = line[0]
+                    if id_item in self._dic_items:
+                        item_features.append(generes)
+                else:
+                    break
         return item_features
 
 class ScoreMovies(Score):
@@ -254,8 +259,8 @@ class ScoreMovies(Score):
         Inicialitza un nou objecte ScoreMovies.
     """
     
-    _ll_usuaris = list 
-    _ll_items = list
+    _ll_usuaris = dict 
+    _ll_items = dict
     _n_usuaris = int 
     _n_items = int
     
@@ -275,19 +280,23 @@ class ScoreMovies(Score):
         logging.info("Inicialitzant ScoreMovies")
         with open(fitxer_valoracions, 'r') as f:
             next(f) 
+            i_usu = 0
+            i_item = 0
             for line in f:
-                if len(self._ll_items) < 50000:
+                if len(self._dic_items) < 50000:
                     id_usuari, id_item, _ , _ = line.strip().split(',')
-                    if id_usuari not in self._ll_usuaris:
-                        self._ll_usuaris.append(id_usuari)
-                    if id_item not in self._ll_items:    
-                        self._ll_items.append(id_item)
+                    if id_usuari not in self._dic_usuaris.keys():
+                        self._dic_usuaris[id_usuari] = i_usu
+                        i_usu += 1
+                    if id_item not in self._dic_items.keys():    
+                        self._dic_items[id_item] = i_item
+                        i_item += 1
                 else:
                     break
 
         #self._ll_usuaris = list(sorted(set(self._ll_usuaris)))
         #self._ll_items = list(sorted(set(self._ll_items)))
-        self._n_usuaris, self._n_items = len(self._ll_usuaris), len(self._ll_items)
+        self._n_usuaris, self._n_items = len(self._dic_usuaris), len(self._dic_items)
         self._mat = np.zeros((self._n_usuaris, self._n_items), dtype='float16')
         
         logging.info("Carregant dades de valoracions")
@@ -296,7 +305,7 @@ class ScoreMovies(Score):
             for line in f:
                 id_usuari, id_item, score, _ = line.strip().split(',')
                 score = float(score)
-                self._mat[self._ll_usuaris.index(id_usuari), self._ll_items.index(id_item)] = score 
+                self._mat[self._dic_usuaris[id_usuari], self._dic_items[id_item]] = score 
     
 
 
@@ -310,8 +319,8 @@ class ScoreBooks(Score):
         Inicialitza un nou objecte ScoreBooks.
     """
      
-    _ll_usuaris = list 
-    _ll_items = list
+    _ll_usuaris = dict 
+    _ll_items = dict
     _n_usuaris = int 
     _n_items = int
     
@@ -329,27 +338,36 @@ class ScoreBooks(Score):
         super().__init__(fitxer_items, fitxer_valoracions) 
         
         logging.info("Inicialitzant ScoreBooks")
+        i_item = 0
         with open(fitxer_items, 'r') as f:
            next(f)
            for line in f:
-               if len(self._ll_items) < 10000:
+               if len(self._dic_items) < 10000:
                    line=line.strip().split(',')
                    id_item = line[0]
-                   self._ll_items.append(id_item)
+                   if id_item not in self._dic_items.keys():
+                       self._dic_items[id_item] = i_item
+                       i_item += 1
                else:
                    break 
+        i_usu = 0
         with open('Books/Users.csv') as f:
-           next(f)
-           for line in f:
-               line=line.strip().split(',')
-               id_usuari = line[0]
-               self._ll_usuaris.append(id_usuari)
+            next(f)
+            for line in f:
+                if len(self._dic_usuaris) < 7000:
+                    line=line.strip().split(',')
+                    id_usuari = line[0]
+                    if id_usuari not in self._dic_usuaris.keys():
+                        self._dic_usuaris[id_usuari] = i_usu
+                        i_usu += 1
+                else:
+                    break
 
 
         #self._ll_usuaris = list(sorted(self._ll_usuaris))
         #self._ll_items = list(sorted(self._ll_items))
         
-        self._n_usuaris, self._n_items = len(self._ll_usuaris), len(self._ll_items)
+        self._n_usuaris, self._n_items = len(self._dic_usuaris), len(self._dic_items)
         self._mat = np.zeros((self._n_usuaris, self._n_items), dtype='float16')
         
         #print('Shape mat:')
@@ -357,22 +375,33 @@ class ScoreBooks(Score):
         logging.info("Carregant dades de valoracions")
         with open(fitxer_valoracions, 'r') as f:
             next(f) 
-            i = 1
+            i = 0
             for line in f:
-               if i < 10000:
-                   line = line.strip().split(',')
-                   
-                   id_usuari = line[0]
-                   id_item = line[1]
-                   score = float(line[2])
-                   if (id_usuari in self._ll_usuaris) and (id_item in self._ll_items):
-                       self._mat[self._ll_usuaris.index(id_usuari), self._ll_items.index(id_item)] = score
-                   i += 1
-               else:
-                   logging.info(self._mat[7,1])
-                   logging.info(self._ll_usuaris[7])
-                   logging.info(self._ll_items[1])
+                if i < 600000:
+                    line = line.strip().split(',')
+                    id_usuari = line[0]
+                    id_item = line[1]
+                    try:
+                        score = float(line[2])
+                        if (id_usuari in self._dic_usuaris) and (id_item in self._dic_items):
+                            self._mat[self._dic_usuaris[id_usuari], self._dic_items[id_item]] = score
+                        i += 1
+                    except ValueError:
+                        pass
+                else:
+                   #logging.info(self._mat[7,1])
+                   #logging.info(self._ll_usuaris[7])
+                   #logging.info(self._ll_items[1])
                    break
+        ha_puntuat = False
+        i = 0
+        while not ha_puntuat:
+            if np.count_nonzero(self._mat[i,:]) != 0:
+                usuari_rata = list(self._dic_usuaris.keys())[i]
+                ha_puntuat = True
+            i += 1
+        logging.info(f"Primer usuari amb alguna puntuació: {usuari_rata}")
+        
                
      
 class ScoreAnimes(Score):
@@ -385,8 +414,8 @@ class ScoreAnimes(Score):
         Inicialitza un nou objecte ScoreAnimes.
     """
     
-    _ll_usuaris = list 
-    _ll_items = list
+    _ll_usuaris = dict
+    _ll_items = dict
     _n_usuaris = int 
     _n_items = int
     
@@ -405,20 +434,24 @@ class ScoreAnimes(Score):
         
         logging.info("Inicialitzant ScoreAnimes")       #Potser fer que la carrega sigui una funcion en comptes de a l'init per fer herència amb Movies?
         with open(fitxer_valoracions, 'r') as f:
-            next(f) 
+            next(f)
+            i_usu = 0
+            i_item = 0
             for line in f:
-                if len(self._ll_items) < 50000:
+                if len(self._dic_items) < 50000:
                     id_usuari, id_item, _ = line.strip().split(',')
-                    if id_usuari not in self._ll_usuaris:
-                        self._ll_usuaris.append(id_usuari)
-                    if id_item not in self._ll_items:    
-                        self._ll_items.append(id_item)
+                    if id_usuari not in self._dic_usuaris:
+                        self._dic_usuaris[id_usuari] = i_usu
+                        i_usu += 1
+                    if id_item not in self._dic_items:    
+                        self._dic_items[id_item] = i_item
+                        i_item += 1
                 else:
                     break
 
         #self._ll_usuaris = list(sorted(set(self._ll_usuaris)))
         #self._ll_items = list(sorted(set(self._ll_items)))
-        self._n_usuaris, self._n_items = len(self._ll_usuaris), len(self._ll_items)
+        self._n_usuaris, self._n_items = len(self._dic_usuaris), len(self._dic_items)
         self._mat = np.zeros((self._n_usuaris, self._n_items), dtype='float16')
         
         logging.info("Carregant dades de valoracions")
@@ -427,6 +460,4 @@ class ScoreAnimes(Score):
             for line in f:
                 id_usuari, id_item, score = line.strip().split(',')
                 score = 0 if float(score) == -1 else float(score)
-                self._mat[self._ll_usuaris.index(id_usuari), self._ll_items.index(id_item)] = score 
-    
-
+                self._mat[self._dic_usuaris[id_usuari], self._dic_items[id_item]] = score 

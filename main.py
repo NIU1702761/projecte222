@@ -13,7 +13,7 @@ console.setLevel(logging.INFO)
 formatter = logging.Formatter('%(asctime)s | %(name)s | %(levelname)s | %(message)s')
 console.setFormatter(formatter)
 logging.getLogger().addHandler(console)
-"""
+
 parser = argparse.ArgumentParser()
 parser.add_argument('dataset')
 parser.add_argument('method')
@@ -44,16 +44,17 @@ if os.path.exists(arxiu_pickles):
     with open(arxiu_pickles, 'rb') as f: 
         r = pickle.load(f)
 else:
-    logging.info(f"Creant recomender per a {dataset} amb el mètode {method}")
+    logging.info(f"Pickles no existeixen -> Creant recomender per a {dataset} amb el mètode {method}")
     if dataset == 'books':
         r = RecomenderBooks(dataset, method)
     elif dataset == 'movielens100k':
         r = RecomenderMovies(dataset, method)
     else:
         r = RecomenderAnimes(dataset, method)
-    with open(arxiu_pickles, 'wb') as f: 
+    with open(arxiu_pickles, 'wb') as f:
+        logging.info("Guardant Pickles")
         pickle.dump(r, f)
-"""
-r = RecomenderAnimes('animedata', 'basat en contingut')
+
+#r = RecomenderAnimes('animedata', 'basat en contingut')
 logging.info("Executant programa principal del recomender")
 r.programa_principal()

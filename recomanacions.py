@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-∫
 from sklearn.feature_extraction.text import TfidfVectorizer
 from score import Score, ScoreBooks, ScoreMovies, ScoreAnimes
 from abc import ABCMeta, abstractmethod
@@ -69,7 +69,7 @@ class Recomanacio(metaclass=ABCMeta):
             logging.warning(f"usuari {id_usuari} no carregat.")
             return None
         else:
-            return self._score.ll_items()
+            return self._score.ll_items().copy()
     
     def valoracions_usuari(self, id_usuari):
         """
@@ -148,16 +148,16 @@ class RecomanacioSimple(Recomanacio):
                 puntuacions[ll_items.index(id_item)] = puntuacio
             
             copia_puntuacions = puntuacions.copy()
-            copia_puntuacions2 = copia_puntuacions.tolist()
+            copia_puntuacions = copia_puntuacions.tolist()
             items = []
             while len(items) < 5:
-                index_maxim = copia_puntuacions2.index(max(copia_puntuacions2))
-                logging.info(f"Màxim: {max(copia_puntuacions2)}")
+                index_maxim = copia_puntuacions.index(max(copia_puntuacions))
+                #logging.info(f"Màxim: {max(copia_puntuacions)}")
                 id_item = ll_items[index_maxim]
                 if id_item in items_a_considerar:
                     if self._score.no_vista(id_usuari, id_item):
                         items.append(id_item)
-                copia_puntuacions2.pop(index_maxim)
+                copia_puntuacions.pop(index_maxim)
                 ll_items.pop(index_maxim)
             return puntuacions, items
     
@@ -209,6 +209,7 @@ class RecomanacioColaborativa(Recomanacio):
             return None, None
         else:
             logging.debug(f"Recomanació Colaborativa per l'usuari: {id_usuari}")
+            logging.info(f"Trobant similituds amb altres usuaris.")
             similituds=[]
             for usuari in self._score.ll_usuaris():
                 s=self._score.similitud(id_usuari,usuari)
