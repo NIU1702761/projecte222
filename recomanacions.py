@@ -6,6 +6,7 @@ from abc import ABCMeta, abstractmethod
 import numpy as np
 import logging
 
+
 class Recomanacio(metaclass=ABCMeta):
     """
     Classe base per a les recomanacions.
@@ -159,7 +160,7 @@ class RecomanacioSimple(Recomanacio):
             items = []
             while len(items) < 5:
                 index_maxim = copia_puntuacions.index(max(copia_puntuacions))
-                #logging.info(f"Màxim: {max(copia_puntuacions)}")
+                logging.debug(f"Màxim: {max(copia_puntuacions)}")
                 id_item = ll_items[index_maxim]
                 if id_item in items_a_considerar:
                     if self._score.no_vista(id_usuari, id_item):
@@ -168,7 +169,6 @@ class RecomanacioSimple(Recomanacio):
                 ll_items.pop(index_maxim)
             return puntuacions, items
     
-
     def usuari_a_avaluar(self):
         """
         Retorna el primer usuari amb alguna valoració feta per poder ser avaluat.
@@ -179,6 +179,7 @@ class RecomanacioSimple(Recomanacio):
             Id del primer item a poder ser avaluat
         """
         super().usuari_a_avaluar()
+
 
 class RecomanacioColaborativa(Recomanacio):
     """
@@ -234,23 +235,23 @@ class RecomanacioColaborativa(Recomanacio):
                 s=self._score.similitud(id_usuari,usuari)
                 similituds.append((usuari,s))
             k = 5
-            similituds.sort(key=lambda x: x[1], reverse=True)
+            similituds.sort(key = lambda x: x[1], reverse = True)
             k_similituds = similituds[:k+1][1:]
             usuaris_similars = [x[0] for x in k_similituds]
             
             puntuacions = np.zeros(len(ll_items))
-            mitjana_usu=self._score.avg_usu(id_usuari)
+            mitjana_usu = self._score.avg_usu(id_usuari)
             for item in ll_items:
-                numerador=0
-                denominador=0
+                numerador = 0
+                denominador = 0
                 
                 for usuari in usuaris_similars:
-                    i=usuaris_similars.index(usuari)
-                    mitjana=self._score.avg_usu(usuari)
+                    i = usuaris_similars.index(usuari)
+                    mitjana = self._score.avg_usu(usuari)
                     numerador += k_similituds[i][1]*(self._score._mat[self._score.ll_usuaris().index(usuari)][self._score.ll_items().index(item)]-mitjana)
-                    denominador+=k_similituds[i][1]
+                    denominador += k_similituds[i][1]
                 try:
-                    puntuacio=float(numerador)/denominador
+                    puntuacio = float(numerador)/denominador
                 except ZeroDivisionError:
                     puntuacio = 0
                 puntuacions[ll_items.index(item)] = mitjana_usu + puntuacio
@@ -278,7 +279,6 @@ class RecomanacioColaborativa(Recomanacio):
         """
         super().usuari_a_avaluar()
     
-
 
 class RecomanacioBasadaEnContingut(Recomanacio):
     """

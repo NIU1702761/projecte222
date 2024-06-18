@@ -7,9 +7,9 @@ import os
 import pickle
 import logging
 
-logging.basicConfig(filename='log.txt',level=logging.DEBUG, format='%(asctime)s | %(name)s | %(levelname)s | %(message)s')
+logging.basicConfig(filename='log.txt', level=logging.DEBUG, format='%(asctime)s | %(name)s | %(levelname)s | %(message)s')
 console = logging.StreamHandler()
-console.setLevel(logging.INFO)
+console.setLevel(logging.DEBUG)
 formatter = logging.Formatter('%(asctime)s | %(name)s | %(levelname)s | %(message)s')
 console.setFormatter(formatter)
 logging.getLogger().addHandler(console)
@@ -22,8 +22,8 @@ args = vars(parser.parse_args())
 dataset = str(args['dataset']).lower()
 method = str(args['method']).lower()
 
-datasets = ['movielens100k', 'books', 'animedata']
-methods = ['simple','colaboratiu','basat en contingut']
+datasets = ['movielens100k', 'books', 'animes']
+methods = ['simple', 'colaboratiu', 'basat en contingut']
 
 while (dataset not in datasets) or (method not in methods):
     print("ERROR: Dataset ha de ser: 'MovieLens100K', 'Books' o 'Animes'.")
@@ -33,18 +33,18 @@ while (dataset not in datasets) or (method not in methods):
     if dataset not in datasets:
         dataset = input('Dataset: ')
 
-logging.info(f"Dataset: {dataset}")
-logging.info(f"Method: {method}")
+logging.debug(f"Dataset: {dataset}")
+logging.debug(f"Method: {method}")
 
 arxiu_pickles = 'recomender_'+dataset+'_'+method+'.dat'
-#logging.info(f"Arxiu pickles: {arxiu_pickles}.")
+
 
 if os.path.exists(arxiu_pickles):
-    logging.info(f"Pickles existeixen -> Carregant recomender des de {arxiu_pickles}")
+    logging.debug(f"Pickles existeixen -> Carregant recomender des de {arxiu_pickles}")
     with open(arxiu_pickles, 'rb') as f: 
         r = pickle.load(f)
 else:
-    logging.info(f"Pickles no existeixen -> Creant recomender per a {dataset} amb el mètode {method}")
+    logging.debug(f"Pickles no existeixen -> Creant recomender per a {dataset} amb el mètode {method}")
     if dataset == 'books':
         r = RecomenderBooks(dataset, method)
     elif dataset == 'movielens100k':
@@ -55,6 +55,6 @@ else:
         logging.info("Guardant Pickles")
         pickle.dump(r, f)
 
-#r = RecomenderAnimes('animedata', 'basat en contingut')
+
 logging.info("Executant programa principal del recomender")
 r.programa_principal()

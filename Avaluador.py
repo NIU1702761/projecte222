@@ -1,6 +1,7 @@
 import numpy as np
 import math
 
+
 class Avaluador():
     """
     Classe per avaluar les prediccions de recomanacions.
@@ -52,6 +53,7 @@ class Avaluador():
             Valor del MAE.
         """
         return (np.sum(abs(self._prediccions[self._mascara] - self._valoracions_usuari[self._mascara]))) / np.count_nonzero(self._valoracions_usuari)
+    
     def rmse(self):
         """
         Calcula l'Arrel de l'Error Quadràtic Mitjà (RMSE) de les prediccions.

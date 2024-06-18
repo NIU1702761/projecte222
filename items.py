@@ -6,6 +6,7 @@ import csv
 from abc import ABCMeta, abstractmethod
 import logging
 
+
 class Item(metaclass=ABCMeta):
     """
     Classe base per a ítems.
@@ -84,8 +85,6 @@ class Item(metaclass=ABCMeta):
             return None
 
 
-
-
 class Book(Item):
     """
     Classe per a ítems de tipus llibre.
@@ -152,6 +151,7 @@ class Book(Item):
         else:
             return None
 
+
 class Movie(Item):
     """
     Classe per a ítems de tipus pel·lícula.
@@ -171,7 +171,7 @@ class Movie(Item):
 
     _generes: list = []
 
-    def __init__(self, ID=0, nomFitxerTitols=""):
+    def __init__(self, ID = 0, nomFitxerTitols = ""):
         """
         Inicialitza un nou objecte Movie.
 
@@ -221,7 +221,7 @@ class Anime(Item):
 
     _generes: list = []
 
-    def __init__(self, ID=0, nomFitxerTitols=""):
+    def __init__(self, ID = 0, nomFitxerTitols = ""):
         """
         Inicialitza un nou objecte Anime.
 
