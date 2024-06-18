@@ -327,7 +327,7 @@ class ScoreMovies(Score):
                 self._mat[self._dic_usuaris[id_usuari], self._dic_items[id_item]] = score 
         
         logging.info(f"Usuaris carregats: {self._n_usuaris}")
-        logging.info(f"Items carregats: {self._n_items}")
+        logging.info(f"Pelis carregades: {self._n_items}")
     
 
 
@@ -413,7 +413,7 @@ class ScoreBooks(Score):
                 else:
                    break
         logging.info(f"Usuaris carregats: {self._n_usuaris}")
-        logging.info(f"Items carregats: {self._n_items}")
+        logging.info(f"Llibres carregats: {self._n_items}")
     
         
                
@@ -476,4 +476,4 @@ class ScoreAnimes(Score):
                 score = 0 if float(score) == -1 else float(score)
                 self._mat[self._dic_usuaris[id_usuari], self._dic_items[id_item]] = score
         logging.info(f"Usuaris carregats: {self._n_usuaris}")
-        logging.info(f"Items carregats: {self._n_items}")
+        logging.info(f"Animes carregats: {self._n_items}")

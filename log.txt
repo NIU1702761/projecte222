@@ -1032,3 +1032,119 @@
 2024-06-17 19:47:19,584 | root | INFO | MAE: nan
 2024-06-17 19:47:19,585 | root | INFO | RMSE: nan
 2024-06-17 19:47:24,764 | root | INFO | Sortint...
+2024-06-18 10:52:36,224 | root | INFO | Dataset: books
+2024-06-18 10:52:36,224 | root | INFO | Method: colaboratiu
+2024-06-18 10:52:36,225 | root | INFO | Pickles no existeixen -> Creant recomender per a books amb el mètode colaboratiu
+2024-06-18 10:52:36,225 | root | INFO | Inicialitzant Recomender amb dataset: books i method: colaboratiu
+2024-06-18 10:52:36,225 | root | INFO | Inicialitzant Recomanacio
+2024-06-18 10:52:36,225 | root | INFO | Inicialitzant ScoreBooks
+2024-06-18 10:52:36,241 | root | INFO | Carregant dades de valoracions
+2024-06-18 10:52:36,411 | root | INFO | Usuaris carregats: 7000
+2024-06-18 10:52:36,411 | root | INFO | Items carregats: 10000
+2024-06-18 10:52:36,411 | root | INFO | Guardant Pickles
+2024-06-18 10:52:36,526 | root | INFO | Executant programa principal del recomender
+2024-06-18 10:52:42,535 | root | INFO | Recomanació per l'usuari: 1
+2024-06-18 10:52:42,537 | root | DEBUG | Recomanació Colaborativa per l'usuari: 1
+2024-06-18 10:52:42,537 | root | INFO | Trobant similituds amb altres usuaris. Aquest recomanador pot anar més lent per alguns casos
+2024-06-18 10:53:39,262 | root | DEBUG | Creant item Book amb id: 0195153448
+2024-06-18 10:53:39,264 | root | DEBUG | Inicialitzant Item amb ID: 0195153448
+2024-06-18 10:53:39,617 | root | DEBUG | Creant item Book amb id: 0002005018
+2024-06-18 10:53:39,617 | root | DEBUG | Inicialitzant Item amb ID: 0002005018
+2024-06-18 10:53:39,982 | root | DEBUG | Creant item Book amb id: 0060973129
+2024-06-18 10:53:39,982 | root | DEBUG | Inicialitzant Item amb ID: 0060973129
+2024-06-18 10:53:40,332 | root | DEBUG | Creant item Book amb id: 0374157065
+2024-06-18 10:53:40,332 | root | DEBUG | Inicialitzant Item amb ID: 0374157065
+2024-06-18 10:53:40,697 | root | DEBUG | Creant item Book amb id: 0393045218
+2024-06-18 10:53:40,697 | root | DEBUG | Inicialitzant Item amb ID: 0393045218
+2024-06-18 10:54:23,178 | root | INFO | Avaluació per l'usuari: 8
+2024-06-18 10:54:23,180 | root | DEBUG | Recomanació Colaborativa per l'usuari: 8
+2024-06-18 10:54:23,180 | root | INFO | Trobant similituds amb altres usuaris. Aquest recomanador pot anar més lent per alguns casos
+2024-06-18 10:55:18,644 | root | INFO | MAE: 0.6529017857142857
+2024-06-18 10:55:18,645 | root | INFO | RMSE: 0.7284322140826783
+2024-06-18 10:55:25,211 | root | INFO | Avaluació per l'usuari: 2
+2024-06-18 10:55:25,212 | root | DEBUG | Recomanació Colaborativa per l'usuari: 2
+2024-06-18 10:55:25,212 | root | INFO | Trobant similituds amb altres usuaris. Aquest recomanador pot anar més lent per alguns casos
+2024-06-18 10:56:22,317 | root | INFO | Necessitem més valoracions de l'usuari {id_usuari} per poder-lo avaluar
+2024-06-18 10:56:22,318 | root | INFO | Primer usuari amb alguna puntuació: 8
+2024-06-18 10:57:02,874 | root | INFO | Sortint...
+2024-06-18 10:57:19,214 | root | INFO | Dataset: books
+2024-06-18 10:57:19,215 | root | INFO | Method: basat en contingut
+2024-06-18 10:57:19,215 | root | INFO | Pickles no existeixen -> Creant recomender per a books amb el mètode basat en contingut
+2024-06-18 10:57:19,215 | root | INFO | Inicialitzant Recomender amb dataset: books i method: basat en contingut
+2024-06-18 10:57:19,215 | root | INFO | Inicialitzant Recomanacio
+2024-06-18 10:57:19,215 | root | INFO | Inicialitzant ScoreBooks
+2024-06-18 10:57:19,228 | root | INFO | Carregant dades de valoracions
+2024-06-18 10:57:19,396 | root | INFO | Usuaris carregats: 7000
+2024-06-18 10:57:19,396 | root | INFO | Items carregats: 10000
+2024-06-18 10:57:19,396 | root | INFO | Guardant Pickles
+2024-06-18 10:57:19,494 | root | INFO | Executant programa principal del recomender
+2024-06-18 10:58:19,743 | root | INFO | Recomanació per l'usuari: 1
+2024-06-18 10:58:19,746 | root | DEBUG | Recomanació Basada En Contingut per l'usuari: 1
+2024-06-18 10:58:21,409 | root | DEBUG | Creant item Book amb id: 0195153448
+2024-06-18 10:58:21,410 | root | DEBUG | Inicialitzant Item amb ID: 0195153448
+2024-06-18 10:58:21,760 | root | DEBUG | Creant item Book amb id: 0002005018
+2024-06-18 10:58:21,760 | root | DEBUG | Inicialitzant Item amb ID: 0002005018
+2024-06-18 10:58:22,108 | root | DEBUG | Creant item Book amb id: 0060973129
+2024-06-18 10:58:22,108 | root | DEBUG | Inicialitzant Item amb ID: 0060973129
+2024-06-18 10:58:22,455 | root | DEBUG | Creant item Book amb id: 0374157065
+2024-06-18 10:58:22,456 | root | DEBUG | Inicialitzant Item amb ID: 0374157065
+2024-06-18 10:58:22,802 | root | DEBUG | Creant item Book amb id: 0393045218
+2024-06-18 10:58:22,802 | root | DEBUG | Inicialitzant Item amb ID: 0393045218
+2024-06-18 10:58:30,636 | root | INFO | Sortint...
+2024-06-18 11:08:37,643 | root | INFO | Dataset: books
+2024-06-18 11:08:37,643 | root | INFO | Method: basat en contingut
+2024-06-18 11:08:37,643 | root | INFO | Pickles no existeixen -> Creant recomender per a books amb el mètode basat en contingut
+2024-06-18 11:08:37,643 | root | INFO | Inicialitzant Recomender amb dataset: books i method: basat en contingut
+2024-06-18 11:08:37,643 | root | INFO | Inicialitzant Recomanacio
+2024-06-18 11:08:37,643 | root | INFO | Inicialitzant ScoreBooks
+2024-06-18 11:08:37,656 | root | INFO | Carregant dades de valoracions
+2024-06-18 11:08:37,834 | root | INFO | Usuaris carregats: 7000
+2024-06-18 11:08:37,834 | root | INFO | Llibres carregats: 10000
+2024-06-18 11:08:37,834 | root | INFO | Guardant Pickles
+2024-06-18 11:08:37,950 | root | INFO | Executant programa principal del recomender
+2024-06-18 11:08:39,559 | root | INFO | Recomanació per l'usuari: 1
+2024-06-18 11:08:39,560 | root | DEBUG | Recomanació Basada En Contingut per l'usuari: 1
+2024-06-18 11:08:41,173 | root | DEBUG | Creant item Book amb id: 0195153448
+2024-06-18 11:08:41,174 | root | DEBUG | Inicialitzant Item amb ID: 0195153448
+2024-06-18 11:08:41,528 | root | DEBUG | Creant item Book amb id: 0002005018
+2024-06-18 11:08:41,528 | root | DEBUG | Inicialitzant Item amb ID: 0002005018
+2024-06-18 11:08:41,883 | root | DEBUG | Creant item Book amb id: 0060973129
+2024-06-18 11:08:41,883 | root | DEBUG | Inicialitzant Item amb ID: 0060973129
+2024-06-18 11:08:42,236 | root | DEBUG | Creant item Book amb id: 0374157065
+2024-06-18 11:08:42,236 | root | DEBUG | Inicialitzant Item amb ID: 0374157065
+2024-06-18 11:08:42,588 | root | DEBUG | Creant item Book amb id: 0393045218
+2024-06-18 11:08:42,588 | root | DEBUG | Inicialitzant Item amb ID: 0393045218
+2024-06-18 11:08:46,893 | root | INFO | Avaluació per l'usuari: 1
+2024-06-18 11:08:46,894 | root | DEBUG | Recomanació Basada En Contingut per l'usuari: 1
+2024-06-18 11:08:48,281 | root | INFO | Necessitem més valoracions de l'usuari {id_usuari} per poder-lo avaluar
+2024-06-18 11:09:03,646 | root | INFO | Sortint...
+2024-06-18 11:09:06,118 | root | INFO | Dataset: books
+2024-06-18 11:09:06,118 | root | INFO | Method: basat en contingut
+2024-06-18 11:09:06,118 | root | INFO | Pickles existeixen -> Carregant recomender des de recomender_books_basat en contingut.dat
+2024-06-18 11:09:06,160 | root | INFO | Executant programa principal del recomender
+2024-06-18 11:09:16,191 | root | INFO | Avaluació per l'usuari: 2
+2024-06-18 11:09:16,192 | root | DEBUG | Recomanació Basada En Contingut per l'usuari: 2
+2024-06-18 11:09:17,714 | root | INFO | Necessitem més valoracions de l'usuari 2 per poder-lo avaluar
+2024-06-18 11:09:28,228 | root | INFO | Avaluació per l'usuari: 8
+2024-06-18 11:09:28,230 | root | DEBUG | Recomanació Basada En Contingut per l'usuari: 8
+2024-06-18 11:09:29,740 | root | INFO | MAE: 3.290647468415599
+2024-06-18 11:09:29,741 | root | INFO | RMSE: 3.337995213754331
+2024-06-18 11:10:40,467 | root | INFO | Sortint...
+2024-06-18 11:10:43,498 | root | INFO | Dataset: books
+2024-06-18 11:10:43,498 | root | INFO | Method: basat en contingut
+2024-06-18 11:10:43,498 | root | INFO | Pickles existeixen -> Carregant recomender des de recomender_books_basat en contingut.dat
+2024-06-18 11:10:43,572 | root | INFO | Executant programa principal del recomender
+2024-06-18 11:10:49,407 | root | INFO | Avaluació per l'usuari: 1
+2024-06-18 11:10:49,408 | root | DEBUG | Recomanació Basada En Contingut per l'usuari: 1
+2024-06-18 11:10:50,993 | root | INFO | Necessitem més valoracions de l'usuari 1 per poder-lo avaluar
+2024-06-18 11:10:50,994 | root | INFO | Primer usuari amb alguna puntuació: 8
+2024-06-18 11:10:53,439 | root | INFO | Sortint...
+2024-06-18 11:13:06,484 | root | INFO | Dataset: books
+2024-06-18 11:13:06,484 | root | INFO | Method: basat en contingut
+2024-06-18 11:13:06,484 | root | INFO | Pickles existeixen -> Carregant recomender des de recomender_books_basat en contingut.dat
+2024-06-18 11:13:06,565 | root | INFO | Executant programa principal del recomender
+2024-06-18 11:13:11,177 | root | INFO | Recomanació per l'usuari: qw
+2024-06-18 11:13:11,178 | root | WARNING | usuari qw no carregat.
+2024-06-18 11:13:21,249 | root | INFO | Avaluació per l'usuari: qw
+2024-06-18 11:13:21,251 | root | WARNING | usuari qw no carregat.
+2024-06-18 11:13:23,522 | root | INFO | Sortint...

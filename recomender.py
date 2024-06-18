@@ -91,7 +91,7 @@ class Recomender(metaclass=ABCMeta):
                         #print('RMSE:',rmse)
                         #print(np.count_nonzero(valoracions_usuari))
                     else:
-                        logging.info("Necessitem més valoracions de l'usuari {id_usuari} per poder-lo avaluar")
+                        logging.info(f"Necessitem més valoracions de l'usuari {id_usuari} per poder-lo avaluar")
                         #print(f"Necessitem més valoracions de l'usuari {id_usuari}.")
                         self._recomanacio.usuari_a_avaluar()
                         

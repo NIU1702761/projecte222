@@ -316,7 +316,11 @@ class RecomanacioBasadaEnContingut(Recomanacio):
             perfil_user = np.sum(mat_numerador, axis=0)
             
             valor_normalitzador = np.sum(vector_puntuacions)
-            Q = perfil_user / valor_normalitzador
+            valor_erroni = np.float16(0)
+            if valor_normalitzador != valor_erroni:
+                Q = perfil_user / valor_normalitzador.astype(np.float64)
+            else:
+                Q = np.zeros(len(perfil_user))
             
             S = np.dot(tfidf_matrix, Q)
             
@@ -332,5 +336,7 @@ class RecomanacioBasadaEnContingut(Recomanacio):
                 copia_puntuacions = np.delete(copia_puntuacions, index)
                 ll_items.pop(index)
             return p_final, items
+    def usuari_a_avaluar(self):
+        self._score.usuari_a_avaluar()
 
 
