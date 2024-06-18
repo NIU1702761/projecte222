@@ -33,7 +33,7 @@ class Item(metaclass=ABCMeta):
     _ID: str
     _extra: str
 
-    def __init__(self, ID=0, nomFitxerTitols=""):
+    def __init__(self, ID='', nomFitxerTitols=""):
         """
         Inicialitza un nou objecte Item.
 

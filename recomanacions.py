@@ -5,7 +5,6 @@ from score import Score, ScoreBooks, ScoreMovies, ScoreAnimes
 from abc import ABCMeta, abstractmethod
 import numpy as np
 import logging
-import csv
 
 class Recomanacio(metaclass=ABCMeta):
     """
@@ -23,7 +22,6 @@ class Recomanacio(metaclass=ABCMeta):
     valoracions_usuari(id_usuari):
         Retorna les valoracions de l'usuari.
     """
-    
     _score = Score
     
     def __init__(self, fitxer_items: str, fitxer_valoracions:str, dataset: str):
@@ -39,7 +37,6 @@ class Recomanacio(metaclass=ABCMeta):
         dataset : str
             Nom del dataset ('movielens100k' o 'books').
         """
-        
         logging.info(f"Inicialitzant Recomanacio")
         if dataset == 'movielens100k':
             self._score = ScoreMovies(fitxer_items, fitxer_valoracions)
@@ -62,7 +59,6 @@ class Recomanacio(metaclass=ABCMeta):
         list
             Llista d'ítems recomanats per a l'usuari.
         """
-        
         ll_usuaris = self._score.ll_usuaris().copy()
         
         if id_usuari not in ll_usuaris:
@@ -85,11 +81,18 @@ class Recomanacio(metaclass=ABCMeta):
         np.ndarray
             Vector de puntuacions de l'usuari.
         """
-        
         return self._score.vector_puntuacions(id_usuari)
     
     def usuari_a_avaluar(self):
-        pass
+        """
+        Retorna el primer usuari amb alguna valoració feta per poder ser avaluat.
+
+        Returns
+        -------
+        str
+            Id del primer item a poder ser avaluat
+        """
+        self._score.usuari_a_avaluar()
 
 
 class RecomanacioSimple(Recomanacio):
@@ -101,7 +104,8 @@ class RecomanacioSimple(Recomanacio):
     recomana_per(id_usuari):
         Retorna una llista d'ítems recomanats per a l'usuari mitjançant el mètode simple.
     """
-    
+    _score = Score
+
     def __init__(self, fitxer_items: str, fitxer_valoracions: str, dataset: str):  
         """
         Inicialitza un nou objecte de recomanació simple.
@@ -165,6 +169,17 @@ class RecomanacioSimple(Recomanacio):
             return puntuacions, items
     
 
+    def usuari_a_avaluar(self):
+        """
+        Retorna el primer usuari amb alguna valoració feta per poder ser avaluat.
+
+        Returns
+        -------
+        str
+            Id del primer item a poder ser avaluat
+        """
+        super().usuari_a_avaluar()
+
 class RecomanacioColaborativa(Recomanacio):
     """
     Classe per a la recomanació col·laborativa.
@@ -174,7 +189,8 @@ class RecomanacioColaborativa(Recomanacio):
     recomana_per(id_usuari):
         Retorna una llista d'ítems recomanats per a l'usuari mitjançant el mètode col·laboratiu.
     """
-    
+    _score = Score
+
     def __init__(self, fitxer_items: str, fitxer_valoracions: str, dataset: str): 
         """
         Inicialitza un nou objecte de recomanació col·laborativa.
@@ -252,7 +268,15 @@ class RecomanacioColaborativa(Recomanacio):
             return puntuacions, items
         
     def usuari_a_avaluar(self):
-        self._score.usuari_a_avaluar()
+        """
+        Retorna el primer usuari amb alguna valoració feta per poder ser avaluat.
+
+        Returns
+        -------
+        str
+            Id del primer item a poder ser avaluat
+        """
+        super().usuari_a_avaluar()
     
 
 
@@ -265,7 +289,8 @@ class RecomanacioBasadaEnContingut(Recomanacio):
     recomana_per(id_usuari):
         Retorna una llista d'ítems recomanats per a l'usuari mitjançant el mètode basat en contingut.
     """
-    
+    _score = Score
+
     def __init__(self, fitxer_items: str, fitxer_valoracions: str, dataset: str):   
         """
         Inicialitza un nou objecte de recomanació basada en contingut.
@@ -336,7 +361,16 @@ class RecomanacioBasadaEnContingut(Recomanacio):
                 copia_puntuacions = np.delete(copia_puntuacions, index)
                 ll_items.pop(index)
             return p_final, items
+        
     def usuari_a_avaluar(self):
-        self._score.usuari_a_avaluar()
+        """
+        Retorna el primer usuari amb alguna valoració feta per poder ser avaluat.
+
+        Returns
+        -------
+        str
+            Id del primer item a poder ser avaluat
+        """
+        super().usuari_a_avaluar()
 
 

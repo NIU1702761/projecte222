@@ -54,7 +54,7 @@ class Score(metaclass=ABCMeta):
         Returns
         -------
         list
-            Llista d'ítems amb un mínim de vots.
+            Llista amb els ids dels ítems amb un mínim de vots.
         """
         vector_num_vots = np.count_nonzero(self._mat, axis=0)
         uu = np.array(list(self._dic_items.keys()))

@@ -1148,3 +1148,39 @@
 2024-06-18 11:13:21,249 | root | INFO | Avaluació per l'usuari: qw
 2024-06-18 11:13:21,251 | root | WARNING | usuari qw no carregat.
 2024-06-18 11:13:23,522 | root | INFO | Sortint...
+2024-06-18 11:37:38,858 | root | INFO | Dataset: books
+2024-06-18 11:37:38,858 | root | INFO | Method: simple
+2024-06-18 11:37:38,858 | root | INFO | Pickles no existeixen -> Creant recomender per a books amb el mètode simple
+2024-06-18 11:37:38,858 | root | INFO | Inicialitzant Recomender amb dataset: books i method: simple
+2024-06-18 11:37:38,858 | root | INFO | Inicialitzant Recomanacio
+2024-06-18 11:37:38,858 | root | INFO | Inicialitzant ScoreBooks
+2024-06-18 11:37:38,871 | root | INFO | Carregant dades de valoracions
+2024-06-18 11:37:39,041 | root | INFO | Usuaris carregats: 7000
+2024-06-18 11:37:39,041 | root | INFO | Llibres carregats: 10000
+2024-06-18 11:37:39,041 | root | INFO | Guardant Pickles
+2024-06-18 11:37:39,119 | root | INFO | Executant programa principal del recomender
+2024-06-18 11:37:41,854 | root | INFO | Avaluació per l'usuari: 1
+2024-06-18 11:37:41,855 | root | DEBUG | Recomanació Simple per l'usuari: 1
+2024-06-18 11:37:44,912 | root | INFO | Necessitem més valoracions de l'usuari 1 per poder-lo avaluar
+2024-06-18 11:38:21,125 | root | INFO | Sortint...
+2024-06-18 11:38:23,285 | root | INFO | Dataset: books
+2024-06-18 11:38:23,286 | root | INFO | Method: simple
+2024-06-18 11:38:23,286 | root | INFO | Pickles existeixen -> Carregant recomender des de recomender_books_simple.dat
+2024-06-18 11:38:23,333 | root | INFO | Executant programa principal del recomender
+2024-06-18 11:38:25,168 | root | INFO | Avaluació per l'usuari: 1
+2024-06-18 11:38:25,169 | root | DEBUG | Recomanació Simple per l'usuari: 1
+2024-06-18 11:38:28,144 | root | INFO | Necessitem més valoracions de l'usuari 1 per poder-lo avaluar
+2024-06-18 11:38:28,144 | root | INFO | Primer usuari amb alguna puntuació: 8
+2024-06-18 12:25:09,241 | root | INFO | Dataset: books
+2024-06-18 12:25:09,242 | root | INFO | Method: simple
+2024-06-18 12:25:09,242 | root | INFO | Pickles existeixen -> Carregant recomender des de recomender_books_simple.dat
+2024-06-18 12:25:09,300 | root | INFO | Executant programa principal del recomender
+2024-06-18 12:25:11,671 | root | INFO | Avaluació per l'usuari: 1
+2024-06-18 12:25:11,672 | root | DEBUG | Recomanació Simple per l'usuari: 1
+2024-06-18 12:25:17,130 | root | INFO | Necessitem més valoracions de l'usuari 1 per poder-lo avaluar
+2024-06-18 12:25:17,131 | root | INFO | Primer usuari amb alguna puntuació: 8
+2024-06-18 12:25:23,015 | root | INFO | Avaluació per l'usuari: 8
+2024-06-18 12:25:23,016 | root | DEBUG | Recomanació Simple per l'usuari: 8
+2024-06-18 12:25:26,812 | root | INFO | MAE: 1.815476190476191
+2024-06-18 12:25:26,813 | root | INFO | RMSE: 1.9142712774864292
+2024-06-18 12:25:29,704 | root | INFO | Sortint...

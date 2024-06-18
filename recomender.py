@@ -6,6 +6,7 @@ from items import Item, Movie, Book, Anime
 import numpy as np
 import logging
 import math
+from avaluador import Avaluador
 
 class Recomender(metaclass=ABCMeta):
     """
@@ -80,28 +81,16 @@ class Recomender(metaclass=ABCMeta):
                 if prediccions is not None:
                     valoracions_usuari = self._recomanacio.valoracions_usuari(id_usuari)
                     if np.count_nonzero(valoracions_usuari) != 0:
-                        c = valoracions_usuari != 0.0
-                        
-                        mae = (np.sum(abs(prediccions[c] - valoracions_usuari[c]))) / np.count_nonzero(valoracions_usuari)
-                        rmse = math.sqrt((np.sum((valoracions_usuari[c] - prediccions[c])**2))/np.count_nonzero(valoracions_usuari))
-                        
+                        a = Avaluador(prediccions, valoracions_usuari)
+                        mae = a.mae()
+                        rmse = a.rmse()
                         logging.info(f"MAE: {mae}")
                         logging.info(f"RMSE: {rmse}")
-                        #print('MAE:',mae)
-                        #print('RMSE:',rmse)
-                        #print(np.count_nonzero(valoracions_usuari))
                     else:
                         logging.info(f"Necessitem més valoracions de l'usuari {id_usuari} per poder-lo avaluar")
-                        #print(f"Necessitem més valoracions de l'usuari {id_usuari}.")
                         self._recomanacio.usuari_a_avaluar()
-                        
-                    #    print('necessitem més valoracions.')
-                    
-                    #print('MAE:',mae)
-                    #print('RMSE:',rmse)
             else:
                 logging.info('Sortint...')
-                #print('Sortint...')
                 break 
     
     @abstractmethod
