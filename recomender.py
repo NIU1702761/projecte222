@@ -8,6 +8,7 @@ import logging
 import math
 from avaluador import Avaluador
 
+
 class Recomender(metaclass=ABCMeta):
     """
     Classe base per als recomanadors de pel·lícules i llibres.
@@ -71,7 +72,6 @@ class Recomender(metaclass=ABCMeta):
                             print('\n'+str(I))
                         else:
                             logging.warning(f'Item no carregat: {id_item}')
-                            #print('Item no carregat')
             elif accio == '2':
                 id_usuari = input("Identificador d'usuari: ")
                 logging.info(f"Avaluació per l'usuari: {id_usuari}")
@@ -87,7 +87,7 @@ class Recomender(metaclass=ABCMeta):
                         logging.info(f"MAE: {mae}")
                         logging.info(f"RMSE: {rmse}")
                     else:
-                        logging.info(f"Necessitem més valoracions de l'usuari {id_usuari} per poder-lo avaluar")
+                        logging.warning(f"Necessitem més valoracions de l'usuari {id_usuari} per poder-lo avaluar")
                         self._recomanacio.usuari_a_avaluar()
             else:
                 logging.info('Sortint...')
@@ -114,8 +114,7 @@ class Recomender(metaclass=ABCMeta):
         """
         
         raise NotImplementedError()
-
-
+    
 
 class RecomenderMovies(Recomender):
     
@@ -173,7 +172,6 @@ class RecomenderMovies(Recomender):
         
         logging.debug(f"Creant item Movie amb id: {id_item}")
         return Movie(id_item, fitxer_items)
-    
 
 
 class RecomenderBooks(Recomender):
@@ -232,7 +230,6 @@ class RecomenderBooks(Recomender):
         return Book(id_item, fitxer_items)
 
 
-
 class RecomenderAnimes(Recomender):
     """
     Classe per al recomanador d'animes.
@@ -247,11 +244,10 @@ class RecomenderAnimes(Recomender):
         Nom del fitxer de valoracions.
     """
     
-    
+
     _recomanacio = Recomanacio
     _fitxer_items = str
     _fitxer_valoracions = str
-    
     
     def __init__(self, dataset: str, method:str):
         """
@@ -287,6 +283,6 @@ class RecomenderAnimes(Recomender):
         Anime
             Objecte anime.
         """
-        
+
         logging.debug(f"Creant item Anime amb id: {id_item}")
         return Anime(id_item, fitxer_items)

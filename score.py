@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+
 from abc import ABCMeta, abstractmethod
 from typing import List
 import numpy as np
@@ -20,6 +21,10 @@ class Score(metaclass=ABCMeta):
         self._dic_usuaris = {}
         self._dic_items = {}
         self._mat = None
+
+    @property
+    def mat(self):
+        return self._mat
     
     def ll_items(self):
         """
@@ -134,7 +139,6 @@ class Score(metaclass=ABCMeta):
         float
             Puntuació mitjana global dels ítems considerats.
         """
-        item_indices = [self._dic_items.get(id_item) for id_item in ll_id_items]
         return np.mean(np.array([self.avg_item(id_item) for id_item in ll_id_items]))
 
     def no_vista(self, id_usuari, id_item):
@@ -192,8 +196,7 @@ class Score(metaclass=ABCMeta):
             return numerador/(math.sqrt(denominador1)*math.sqrt(denominador2))
         else:
             return 0
-    
-    
+     
     def vector_puntuacions(self, id_user):
         """
         Retorna el vector de puntuacions d'un usuari.
@@ -248,8 +251,7 @@ class Score(metaclass=ABCMeta):
                 else:
                     break
         return item_features
-    
-    
+      
     def usuari_a_avaluar(self):
         """
         Retorna el primer usuari amb almenys una valoració feta per poder utilitzar l'avaluador.'
@@ -266,7 +268,8 @@ class Score(metaclass=ABCMeta):
                 usuari_rata = list(self._dic_usuaris.keys())[i]
                 ha_puntuat = True
             i += 1
-        return logging.info(f"Primer usuari amb alguna puntuació: {usuari_rata}")
+        return logging.debug(f"Primer usuari amb alguna puntuació: {usuari_rata}")
+
 
 class ScoreMovies(Score):
     """
@@ -313,8 +316,6 @@ class ScoreMovies(Score):
                 else:
                     break
 
-        #self._ll_usuaris = list(sorted(set(self._ll_usuaris)))
-        #self._ll_items = list(sorted(set(self._ll_items)))
         self._n_usuaris, self._n_items = len(self._dic_usuaris), len(self._dic_items)
         self._mat = np.zeros((self._n_usuaris, self._n_items), dtype='float16')
         
@@ -326,10 +327,9 @@ class ScoreMovies(Score):
                 score = float(score)
                 self._mat[self._dic_usuaris[id_usuari], self._dic_items[id_item]] = score 
         
-        logging.info(f"Usuaris carregats: {self._n_usuaris}")
-        logging.info(f"Pelis carregades: {self._n_items}")
+        logging.debug(f"Usuaris carregats: {self._n_usuaris}")
+        logging.debug(f"Pelis carregades: {self._n_items}")
     
-
 
 class ScoreBooks(Score):
     """
@@ -385,15 +385,9 @@ class ScoreBooks(Score):
                 else:
                     break
 
-
-        #self._ll_usuaris = list(sorted(self._ll_usuaris))
-        #self._ll_items = list(sorted(self._ll_items))
-        
         self._n_usuaris, self._n_items = len(self._dic_usuaris), len(self._dic_items)
         self._mat = np.zeros((self._n_usuaris, self._n_items), dtype='float16')
-        
-        #print('Shape mat:')
-        #print(self._mat.shape)
+
         logging.info("Carregant dades de valoracions")
         with open(fitxer_valoracions, 'r') as f:
             next(f) 
@@ -412,12 +406,10 @@ class ScoreBooks(Score):
                         pass
                 else:
                    break
-        logging.info(f"Usuaris carregats: {self._n_usuaris}")
-        logging.info(f"Llibres carregats: {self._n_items}")
+        logging.debug(f"Usuaris carregats: {self._n_usuaris}")
+        logging.debug(f"Llibres carregats: {self._n_items}")
     
-        
-               
-     
+         
 class ScoreAnimes(Score):
     """
     Classe per calcular puntuacions d'animes.
@@ -446,7 +438,7 @@ class ScoreAnimes(Score):
         """
         super().__init__(fitxer_items, fitxer_valoracions) 
         
-        logging.info("Inicialitzant ScoreAnimes")       #Potser fer que la carrega sigui una funcion en comptes de a l'init per fer herència amb Movies?
+        logging.info("Inicialitzant ScoreAnimes")      
         with open(fitxer_valoracions, 'r') as f:
             next(f)
             i_usu = 0
@@ -463,8 +455,6 @@ class ScoreAnimes(Score):
                 else:
                     break
 
-        #self._ll_usuaris = list(sorted(set(self._ll_usuaris)))
-        #self._ll_items = list(sorted(set(self._ll_items)))
         self._n_usuaris, self._n_items = len(self._dic_usuaris), len(self._dic_items)
         self._mat = np.zeros((self._n_usuaris, self._n_items), dtype='float16')
         
@@ -475,5 +465,5 @@ class ScoreAnimes(Score):
                 id_usuari, id_item, score = line.strip().split(',')
                 score = 0 if float(score) == -1 else float(score)
                 self._mat[self._dic_usuaris[id_usuari], self._dic_items[id_item]] = score
-        logging.info(f"Usuaris carregats: {self._n_usuaris}")
-        logging.info(f"Animes carregats: {self._n_items}")
+        logging.debug(f"Usuaris carregats: {self._n_usuaris}")
+        logging.debug(f"Animes carregats: {self._n_items}")
