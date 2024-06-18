@@ -8,7 +8,7 @@ import pickle
 import logging
 from datetime import datetime
 
-doc = datetime.now().strftime("log_%H-%M-%d-%m-%Y.txt")
+doc = datetime.now().strftime("log_%H-%M-%d-%m.txt")
 logging.basicConfig(filename= doc, level=logging.DEBUG, format='%(asctime)s | %(name)s | %(levelname)s | %(message)s')
 console = logging.StreamHandler()
 console.setLevel(logging.DEBUG)
@@ -60,7 +60,7 @@ else:
 
 logging.info("Executant programa principal del recomender")
 r.programa_principal()
-print("\nAutores: Alicia Martí López i Aya Talbi")
+print("\nAutores: Alicia Martí i Aya Talbi")
 print("Crèdits dels datasets: \nMovies: MovieLens Dataset (https://grouplens.org/datasets/movielens/latest/)")
 print("Books: Book Recommendation Dataset: (https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset/data)")
 print("Animes: Anime Recommendations Database: (https://www.kaggle.com/datasets/CooperUnion/anime-recommendations-database/data)")
