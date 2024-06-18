@@ -48,7 +48,6 @@ class Item(metaclass=ABCMeta):
         self._titol = ""
         self._ID = ID
         self._extra = ''
-        logging.debug(f"Inicialitzant Item amb ID: {ID}")
         self._carrega_dades(nomFitxerTitols)
 
     def _carrega_dades(self, nomFitxerTitols):
@@ -117,6 +116,7 @@ class Book(Item):
         nomFitxerTitols : str
             Nom del fitxer de títols.
         """
+        logging.debug(f"Inicialitzant Llibre amb id: {ID}")
         super().__init__(ID, nomFitxerTitols)
 
     def _carrega_dades(self, nomFitxerTitols):
@@ -182,6 +182,7 @@ class Movie(Item):
         nomFitxerTitols : str
             Nom del fitxer de títols.
         """
+        logging.debug(f"Inicialitzant Peli amb id: {ID}")
         super().__init__(ID, nomFitxerTitols)
         self._generes = self._extra.split('|')
 
@@ -232,6 +233,7 @@ class Anime(Item):
         nomFitxerTitols : str
             Nom del fitxer de títols.
         """
+        logging.debug(f"Inicialitzant Anime amb id: {ID}")
         super().__init__(ID, nomFitxerTitols)
         self._generes = self._extra.split(",")
 

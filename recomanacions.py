@@ -160,7 +160,6 @@ class RecomanacioSimple(Recomanacio):
             items = []
             while len(items) < 5:
                 index_maxim = copia_puntuacions.index(max(copia_puntuacions))
-                logging.debug(f"Màxim: {max(copia_puntuacions)}")
                 id_item = ll_items[index_maxim]
                 if id_item in items_a_considerar:
                     if self._score.no_vista(id_usuari, id_item):

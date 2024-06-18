@@ -30,8 +30,10 @@ while (dataset not in datasets) or (method not in methods):
     print("ERROR: Method ha de ser: 'simple', 'colaboratiu' o 'basat en contingut'")
     if method not in methods:
         method = input('Method: ')
+        method = method.lower()
     if dataset not in datasets:
         dataset = input('Dataset: ')
+        dataset = dataset.lower()
 
 logging.debug(f"Dataset: {dataset}")
 logging.debug(f"Method: {method}")

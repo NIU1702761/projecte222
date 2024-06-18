@@ -169,8 +169,6 @@ class RecomenderMovies(Recomender):
         Movie
             Objecte pel·lícula.
         """
-        
-        logging.debug(f"Creant item Movie amb id: {id_item}")
         return Movie(id_item, fitxer_items)
 
 
@@ -226,7 +224,6 @@ class RecomenderBooks(Recomender):
         Book
             Objecte llibre.
         """
-        logging.debug(f"Creant item Book amb id: {id_item}")
         return Book(id_item, fitxer_items)
 
 
@@ -283,6 +280,4 @@ class RecomenderAnimes(Recomender):
         Anime
             Objecte anime.
         """
-
-        logging.debug(f"Creant item Anime amb id: {id_item}")
         return Anime(id_item, fitxer_items)
