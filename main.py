@@ -6,8 +6,10 @@ import argparse
 import os 
 import pickle
 import logging
+from datetime import datetime
 
-logging.basicConfig(filename='log.txt', level=logging.DEBUG, format='%(asctime)s | %(name)s | %(levelname)s | %(message)s')
+doc = datetime.now().strftime("log_%H-%M-%d-%m-%Y.txt")
+logging.basicConfig(filename= doc, level=logging.DEBUG, format='%(asctime)s | %(name)s | %(levelname)s | %(message)s')
 console = logging.StreamHandler()
 console.setLevel(logging.DEBUG)
 formatter = logging.Formatter('%(asctime)s | %(name)s | %(levelname)s | %(message)s')
