@@ -56,7 +56,3 @@ else:
 
 logging.info("Executant programa principal del recomender")
 r.programa_principal()
-print("\nAutores: Alicia Martí López i Aya Talbi")
-print("Crèdits dels datasets: \nMovies: MovieLens Dataset (https://grouplens.org/datasets/movielens/latest/)")
-print("Books: Book Recommendation Dataset: (https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset/data)")
-print("Animes: Anime Recommendations Database: (https://www.kaggle.com/datasets/CooperUnion/anime-recommendations-database/data)")
