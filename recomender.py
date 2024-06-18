@@ -244,7 +244,7 @@ class RecomenderAnimes(Recomender):
         Nom del fitxer de valoracions.
     """
     
-    
+
     _recomanacio = Recomanacio
     _fitxer_items = str
     _fitxer_valoracions = str
@@ -283,6 +283,6 @@ class RecomenderAnimes(Recomender):
         Anime
             Objecte anime.
         """
-        
+
         logging.debug(f"Creant item Anime amb id: {id_item}")
         return Anime(id_item, fitxer_items)

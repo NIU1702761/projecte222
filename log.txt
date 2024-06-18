@@ -1261,3 +1261,126 @@
 2024-06-18 12:40:04,193 | root | DEBUG | Recomanació Basada En Contingut per l'usuari: 40
 2024-06-18 12:40:04,342 | root | INFO | MAE: 8.685185185185183
 2024-06-18 12:40:04,343 | root | INFO | RMSE: 8.740295631174181
+2024-06-18 16:57:40,322 | root | DEBUG | Dataset: animes
+2024-06-18 16:57:40,323 | root | DEBUG | Method: colaboratiu
+2024-06-18 16:57:40,323 | root | DEBUG | Pickles no existeixen -> Creant recomender per a animes amb el mètode colaboratiu
+2024-06-18 16:57:40,323 | root | INFO | Inicialitzant Recomender amb dataset: animes i method: colaboratiu
+2024-06-18 16:57:40,324 | root | INFO | Inicialitzant Recomanacio
+2024-06-18 16:57:40,324 | root | INFO | Inicialitzant ScoreAnimes
+2024-06-18 16:57:40,339 | root | INFO | Carregant dades de valoracions
+2024-06-18 16:57:40,373 | root | DEBUG | Usuaris carregats: 533
+2024-06-18 16:57:40,373 | root | DEBUG | Animes carregats: 4445
+2024-06-18 16:57:40,374 | root | INFO | Guardant Pickles
+2024-06-18 16:57:40,378 | root | INFO | Executant programa principal del recomender
+2024-06-18 16:57:44,990 | root | INFO | Recomanació per l'usuari: 23
+2024-06-18 16:57:44,992 | root | DEBUG | Recomanació Colaborativa per l'usuari: 23
+2024-06-18 16:57:44,992 | root | INFO | Trobant similituds amb altres usuaris. Aquest recomanador pot anar més lent per alguns casos
+2024-06-18 16:57:46,729 | root | DEBUG | Creant item Anime amb id: 9919
+2024-06-18 16:57:46,730 | root | DEBUG | Inicialitzant Item amb ID: 9919
+2024-06-18 16:57:46,732 | root | DEBUG | Creant item Anime amb id: 11757
+2024-06-18 16:57:46,732 | root | DEBUG | Inicialitzant Item amb ID: 11757
+2024-06-18 16:57:46,733 | root | DEBUG | Creant item Anime amb id: 10620
+2024-06-18 16:57:46,734 | root | DEBUG | Inicialitzant Item amb ID: 10620
+2024-06-18 16:57:46,735 | root | DEBUG | Creant item Anime amb id: 4224
+2024-06-18 16:57:46,735 | root | DEBUG | Inicialitzant Item amb ID: 4224
+2024-06-18 16:57:46,736 | root | DEBUG | Creant item Anime amb id: 6205
+2024-06-18 16:57:46,736 | root | DEBUG | Inicialitzant Item amb ID: 6205
+2024-06-18 16:57:56,659 | root | INFO | Avaluació per l'usuari: 34
+2024-06-18 16:57:56,660 | root | DEBUG | Recomanació Colaborativa per l'usuari: 34
+2024-06-18 16:57:56,660 | root | INFO | Trobant similituds amb altres usuaris. Aquest recomanador pot anar més lent per alguns casos
+2024-06-18 16:57:58,396 | root | INFO | MAE: 7.6648065476190474
+2024-06-18 16:57:58,396 | root | INFO | RMSE: 7.741683182964435
+2024-06-18 16:58:50,327 | root | INFO | Sortint...
+2024-06-18 16:58:57,945 | root | DEBUG | Dataset: books
+2024-06-18 16:58:57,945 | root | DEBUG | Method: colaboratiu
+2024-06-18 16:58:57,946 | root | DEBUG | Pickles existeixen -> Carregant recomender des de recomender_books_colaboratiu.dat
+2024-06-18 16:58:58,024 | root | INFO | Executant programa principal del recomender
+2024-06-18 16:59:03,938 | root | INFO | Recomanació per l'usuari: 45
+2024-06-18 16:59:03,939 | root | DEBUG | Recomanació Colaborativa per l'usuari: 45
+2024-06-18 16:59:03,940 | root | INFO | Trobant similituds amb altres usuaris. Aquest recomanador pot anar més lent per alguns casos
+2024-06-18 17:00:17,596 | root | DEBUG | Creant item Book amb id: 0195153448
+2024-06-18 17:00:17,597 | root | DEBUG | Inicialitzant Item amb ID: 0195153448
+2024-06-18 17:00:18,102 | root | DEBUG | Creant item Book amb id: 0002005018
+2024-06-18 17:00:18,102 | root | DEBUG | Inicialitzant Item amb ID: 0002005018
+2024-06-18 17:00:18,606 | root | DEBUG | Creant item Book amb id: 0060973129
+2024-06-18 17:00:18,607 | root | DEBUG | Inicialitzant Item amb ID: 0060973129
+2024-06-18 17:00:19,111 | root | DEBUG | Creant item Book amb id: 0374157065
+2024-06-18 17:00:19,111 | root | DEBUG | Inicialitzant Item amb ID: 0374157065
+2024-06-18 17:00:19,612 | root | DEBUG | Creant item Book amb id: 0393045218
+2024-06-18 17:00:19,613 | root | DEBUG | Inicialitzant Item amb ID: 0393045218
+2024-06-18 17:00:46,489 | root | INFO | Avaluació per l'usuari: 450
+2024-06-18 17:00:46,490 | root | DEBUG | Recomanació Colaborativa per l'usuari: 450
+2024-06-18 17:00:46,490 | root | INFO | Trobant similituds amb altres usuaris. Aquest recomanador pot anar més lent per alguns casos
+2024-06-18 17:03:06,076 | root | WARNING | Necessitem més valoracions de l'usuari 450 per poder-lo avaluar
+2024-06-18 17:03:06,078 | root | DEBUG | Primer usuari amb alguna puntuació: 8
+2024-06-18 17:04:35,243 | root | INFO | Avaluació per l'usuari: 8
+2024-06-18 17:04:35,244 | root | DEBUG | Recomanació Colaborativa per l'usuari: 8
+2024-06-18 17:04:35,244 | root | INFO | Trobant similituds amb altres usuaris. Aquest recomanador pot anar més lent per alguns casos
+2024-06-18 17:06:16,329 | root | INFO | MAE: 0.6529017857142857
+2024-06-18 17:06:16,329 | root | INFO | RMSE: 0.7284322140826783
+2024-06-18 17:12:52,859 | root | DEBUG | Dataset: books
+2024-06-18 17:12:52,859 | root | DEBUG | Method: basat en contingut
+2024-06-18 17:12:52,859 | root | DEBUG | Pickles existeixen -> Carregant recomender des de recomender_books_basat en contingut.dat
+2024-06-18 17:12:52,903 | root | INFO | Executant programa principal del recomender
+2024-06-18 17:12:57,012 | root | INFO | Recomanació per l'usuari: 345
+2024-06-18 17:12:57,013 | root | DEBUG | Recomanació Basada En Contingut per l'usuari: 345
+2024-06-18 17:12:58,333 | root | DEBUG | Creant item Book amb id: 002542730X
+2024-06-18 17:12:58,334 | root | DEBUG | Inicialitzant Item amb ID: 002542730X
+2024-06-18 17:12:58,839 | root | DEBUG | Creant item Book amb id: 002542730x
+2024-06-18 17:12:58,839 | root | DEBUG | Inicialitzant Item amb ID: 002542730x
+2024-06-18 17:12:59,331 | root | DEBUG | Creant item Book amb id: 0195153448
+2024-06-18 17:12:59,331 | root | DEBUG | Inicialitzant Item amb ID: 0195153448
+2024-06-18 17:12:59,822 | root | DEBUG | Creant item Book amb id: 0002005018
+2024-06-18 17:12:59,822 | root | DEBUG | Inicialitzant Item amb ID: 0002005018
+2024-06-18 17:13:00,326 | root | DEBUG | Creant item Book amb id: 0060973129
+2024-06-18 17:13:00,326 | root | DEBUG | Inicialitzant Item amb ID: 0060973129
+2024-06-18 17:13:10,307 | root | INFO | Avaluació per l'usuari: 677
+2024-06-18 17:13:10,307 | root | DEBUG | Recomanació Basada En Contingut per l'usuari: 677
+2024-06-18 17:13:11,581 | root | INFO | MAE: 2.0000000000000018
+2024-06-18 17:13:11,581 | root | INFO | RMSE: 2.0000000000000018
+2024-06-18 17:13:15,161 | root | INFO | Sortint...
+2024-06-18 17:13:18,338 | root | DEBUG | Dataset: books
+2024-06-18 17:13:18,338 | root | DEBUG | Method: colaboratiu
+2024-06-18 17:13:18,338 | root | DEBUG | Pickles existeixen -> Carregant recomender des de recomender_books_colaboratiu.dat
+2024-06-18 17:13:18,388 | root | INFO | Executant programa principal del recomender
+2024-06-18 17:13:27,185 | root | INFO | Recomanació per l'usuari: 345
+2024-06-18 17:13:27,186 | root | DEBUG | Recomanació Colaborativa per l'usuari: 345
+2024-06-18 17:13:27,186 | root | INFO | Trobant similituds amb altres usuaris. Aquest recomanador pot anar més lent per alguns casos
+2024-06-18 17:14:40,234 | root | DEBUG | Creant item Book amb id: 0195153448
+2024-06-18 17:14:40,234 | root | DEBUG | Inicialitzant Item amb ID: 0195153448
+2024-06-18 17:14:40,736 | root | DEBUG | Creant item Book amb id: 0002005018
+2024-06-18 17:14:40,736 | root | DEBUG | Inicialitzant Item amb ID: 0002005018
+2024-06-18 17:14:41,240 | root | DEBUG | Creant item Book amb id: 0060973129
+2024-06-18 17:14:41,240 | root | DEBUG | Inicialitzant Item amb ID: 0060973129
+2024-06-18 17:14:41,755 | root | DEBUG | Creant item Book amb id: 0374157065
+2024-06-18 17:14:41,755 | root | DEBUG | Inicialitzant Item amb ID: 0374157065
+2024-06-18 17:14:42,262 | root | DEBUG | Creant item Book amb id: 0393045218
+2024-06-18 17:14:42,262 | root | DEBUG | Inicialitzant Item amb ID: 0393045218
+2024-06-18 17:15:05,621 | root | INFO | Avaluació per l'usuari: 400
+2024-06-18 17:15:05,622 | root | DEBUG | Recomanació Colaborativa per l'usuari: 400
+2024-06-18 17:15:05,623 | root | INFO | Trobant similituds amb altres usuaris. Aquest recomanador pot anar més lent per alguns casos
+2024-06-18 17:16:19,870 | root | WARNING | Necessitem més valoracions de l'usuari 400 per poder-lo avaluar
+2024-06-18 17:16:19,871 | root | DEBUG | Primer usuari amb alguna puntuació: 8
+2024-06-18 17:16:39,762 | root | INFO | Avaluació per l'usuari: 5555
+2024-06-18 17:16:39,763 | root | DEBUG | Recomanació Colaborativa per l'usuari: 5555
+2024-06-18 17:16:39,764 | root | INFO | Trobant similituds amb altres usuaris. Aquest recomanador pot anar més lent per alguns casos
+2024-06-18 17:17:57,211 | root | INFO | MAE: 5.357465277777778
+2024-06-18 17:17:57,211 | root | INFO | RMSE: 5.4759825437886915
+2024-06-18 17:18:42,692 | root | DEBUG | Dataset: books
+2024-06-18 17:18:42,692 | root | DEBUG | Method: colaboratiu
+2024-06-18 17:18:42,693 | root | DEBUG | Pickles existeixen -> Carregant recomender des de recomender_books_colaboratiu.dat
+2024-06-18 17:18:42,743 | root | INFO | Executant programa principal del recomender
+2024-06-18 17:18:47,090 | root | INFO | Avaluació per l'usuari: 5555
+2024-06-18 17:18:47,091 | root | DEBUG | Recomanació Colaborativa per l'usuari: 5555
+2024-06-18 17:18:47,091 | root | INFO | Trobant similituds amb altres usuaris. Aquest recomanador pot anar més lent per alguns casos
+2024-06-18 17:20:03,964 | root | INFO | MAE: 5.357465277777778
+2024-06-18 17:20:03,964 | root | INFO | RMSE: 5.4759825437886915
+2024-06-18 17:20:31,757 | root | DEBUG | Dataset: books
+2024-06-18 17:20:31,758 | root | DEBUG | Method: colaboratiu
+2024-06-18 17:20:31,758 | root | DEBUG | Pickles existeixen -> Carregant recomender des de recomender_books_colaboratiu.dat
+2024-06-18 17:20:31,805 | root | INFO | Executant programa principal del recomender
+2024-06-18 17:20:38,495 | root | INFO | Avaluació per l'usuari: 5555
+2024-06-18 17:20:38,495 | root | DEBUG | Recomanació Colaborativa per l'usuari: 5555
+2024-06-18 17:20:38,496 | root | INFO | Trobant similituds amb altres usuaris. Aquest recomanador pot anar més lent per alguns casos
+2024-06-18 17:21:56,093 | root | INFO | MAE: 5.357465277777778
+2024-06-18 17:21:56,094 | root | INFO | RMSE: 5.4759825437886915

@@ -229,7 +229,7 @@ class RecomanacioColaborativa(Recomanacio):
             return None, None
         else:
             logging.debug(f"Recomanació Colaborativa per l'usuari: {id_usuari}")
-            logging.info(f"Trobant similituds amb altres usuaris. Aquest recomanador pot anar més lent per alguns casos")
+            logging.info(f"Trobant similituds amb altres usuaris. Aquest recomanador pot anar més lent per alguns casos (fins a 45s)")
             similituds=[]
             for usuari in self._score.ll_usuaris():
                 s=self._score.similitud(id_usuari,usuari)
@@ -248,7 +248,7 @@ class RecomanacioColaborativa(Recomanacio):
                 for usuari in usuaris_similars:
                     i = usuaris_similars.index(usuari)
                     mitjana = self._score.avg_usu(usuari)
-                    numerador += k_similituds[i][1]*(self._score._mat[self._score.ll_usuaris().index(usuari)][self._score.ll_items().index(item)]-mitjana)
+                    numerador += k_similituds[i][1]*(self._score.mat[self._score.ll_usuaris().index(usuari)][self._score.ll_items().index(item)]-mitjana)
                     denominador += k_similituds[i][1]
                 try:
                     puntuacio = float(numerador)/denominador

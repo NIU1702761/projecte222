@@ -21,6 +21,10 @@ class Score(metaclass=ABCMeta):
         self._dic_usuaris = {}
         self._dic_items = {}
         self._mat = None
+
+    @property
+    def mat(self):
+        return self._mat
     
     def ll_items(self):
         """
@@ -135,7 +139,6 @@ class Score(metaclass=ABCMeta):
         float
             Puntuació mitjana global dels ítems considerats.
         """
-        item_indices = [self._dic_items.get(id_item) for id_item in ll_id_items]
         return np.mean(np.array([self.avg_item(id_item) for id_item in ll_id_items]))
 
     def no_vista(self, id_usuari, id_item):

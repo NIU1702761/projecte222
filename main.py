@@ -38,7 +38,6 @@ logging.debug(f"Method: {method}")
 
 arxiu_pickles = 'recomender_'+dataset+'_'+method+'.dat'
 
-
 if os.path.exists(arxiu_pickles):
     logging.debug(f"Pickles existeixen -> Carregant recomender des de {arxiu_pickles}")
     with open(arxiu_pickles, 'rb') as f: 
@@ -54,7 +53,6 @@ else:
     with open(arxiu_pickles, 'wb') as f:
         logging.info("Guardant Pickles")
         pickle.dump(r, f)
-
 
 logging.info("Executant programa principal del recomender")
 r.programa_principal()
