@@ -1384,3 +1384,37 @@
 2024-06-18 17:20:38,496 | root | INFO | Trobant similituds amb altres usuaris. Aquest recomanador pot anar més lent per alguns casos
 2024-06-18 17:21:56,093 | root | INFO | MAE: 5.357465277777778
 2024-06-18 17:21:56,094 | root | INFO | RMSE: 5.4759825437886915
+2024-06-18 17:44:41,781 | root | DEBUG | Dataset: books
+2024-06-18 17:44:41,781 | root | DEBUG | Method: basat en contingut
+2024-06-18 17:44:41,781 | root | DEBUG | Pickles existeixen -> Carregant recomender des de recomender_books_basat en contingut.dat
+2024-06-18 17:44:41,827 | root | INFO | Executant programa principal del recomender
+2024-06-18 17:44:45,033 | root | INFO | Recomanació per l'usuari: 23
+2024-06-18 17:44:45,034 | root | DEBUG | Recomanació Basada En Contingut per l'usuari: 23
+2024-06-18 17:44:46,403 | root | DEBUG | Creant item Book amb id: 0195153448
+2024-06-18 17:44:46,404 | root | DEBUG | Inicialitzant Item amb ID: 0195153448
+2024-06-18 17:44:46,916 | root | DEBUG | Creant item Book amb id: 0002005018
+2024-06-18 17:44:46,917 | root | DEBUG | Inicialitzant Item amb ID: 0002005018
+2024-06-18 17:44:47,405 | root | DEBUG | Creant item Book amb id: 0060973129
+2024-06-18 17:44:47,405 | root | DEBUG | Inicialitzant Item amb ID: 0060973129
+2024-06-18 17:44:47,898 | root | DEBUG | Creant item Book amb id: 0374157065
+2024-06-18 17:44:47,898 | root | DEBUG | Inicialitzant Item amb ID: 0374157065
+2024-06-18 17:44:48,395 | root | DEBUG | Creant item Book amb id: 0393045218
+2024-06-18 17:44:48,396 | root | DEBUG | Inicialitzant Item amb ID: 0393045218
+2024-06-18 17:44:50,972 | root | INFO | Sortint...
+2024-06-18 17:45:59,035 | root | DEBUG | Dataset: books
+2024-06-18 17:45:59,036 | root | DEBUG | Method: basat en contingut
+2024-06-18 17:45:59,036 | root | DEBUG | Pickles existeixen -> Carregant recomender des de recomender_books_basat en contingut.dat
+2024-06-18 17:45:59,079 | root | INFO | Executant programa principal del recomender
+2024-06-18 17:46:01,187 | root | INFO | Recomanació per l'usuari: 23
+2024-06-18 17:46:01,188 | root | DEBUG | Recomanació Basada En Contingut per l'usuari: 23
+2024-06-18 17:46:02,465 | root | DEBUG | Creant item Book amb id: 0195153448
+2024-06-18 17:46:02,466 | root | DEBUG | Inicialitzant Item amb ID: 0195153448
+2024-06-18 17:46:02,977 | root | DEBUG | Creant item Book amb id: 0002005018
+2024-06-18 17:46:02,977 | root | DEBUG | Inicialitzant Item amb ID: 0002005018
+2024-06-18 17:46:03,503 | root | DEBUG | Creant item Book amb id: 0060973129
+2024-06-18 17:46:03,503 | root | DEBUG | Inicialitzant Item amb ID: 0060973129
+2024-06-18 17:46:04,030 | root | DEBUG | Creant item Book amb id: 0374157065
+2024-06-18 17:46:04,031 | root | DEBUG | Inicialitzant Item amb ID: 0374157065
+2024-06-18 17:46:04,544 | root | DEBUG | Creant item Book amb id: 0393045218
+2024-06-18 17:46:04,545 | root | DEBUG | Inicialitzant Item amb ID: 0393045218
+2024-06-18 17:46:07,427 | root | INFO | Sortint...
